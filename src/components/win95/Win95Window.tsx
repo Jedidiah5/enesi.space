@@ -10,25 +10,9 @@ type Props = {
   children: ReactNode;
   status?: ReactNode;
   className?: string;
-  titleTone?: "violet" | "blue" | "orange";
 };
 
-export function Win95Window({
-  title,
-  icon,
-  menu,
-  children,
-  status,
-  className = "",
-  titleTone = "violet",
-}: Props) {
-  const toneClass =
-    titleTone === "orange"
-      ? "bg-gradient-to-r from-[#ff7d2c] to-[#ffba3b]"
-      : titleTone === "blue"
-        ? "bg-gradient-to-r from-[#2d39ff] to-[#5eb2ff]"
-        : "bg-gradient-to-r from-[#6f2bff] via-[#bb43ff] to-[#ff66b8]";
-
+export function Win95Window({ title, icon, menu, children, status, className = "" }: Props) {
   return (
     <motion.div
       className={`win95-window-shell mx-auto flex w-full max-w-5xl flex-col shadow-w95drop ${className}`}
@@ -36,7 +20,7 @@ export function Win95Window({
       animate={{ opacity: 1, scale: 1, y: 0 }}
       transition={{ type: "spring", stiffness: 420, damping: 28 }}
     >
-      <div className={`win95-titlebar ${toneClass} flex select-none items-center gap-1 px-2 py-1`}>
+      <div className="win95-titlebar flex select-none items-center gap-1 px-1 py-0.5">
         <span className="flex min-w-0 flex-1 items-center gap-1 truncate text-[13px]">
           {icon ? <span className="shrink-0">{icon}</span> : null}
           <span className="truncate">{title}</span>

@@ -4,7 +4,6 @@ import { RetroPanel } from "@/components/retro/RetroPanel";
 import { SkillTicker } from "@/components/retro/SkillTicker";
 import { Win95Desktop } from "@/components/win95/Win95Desktop";
 import { Win95DraggableNote } from "@/components/win95/Win95DraggableNote";
-import { EpicVisualDecor } from "@/components/win95/EpicVisualDecor";
 import { Win95MenuBar } from "@/components/win95/Win95MenuBar";
 import { Win95Taskbar } from "@/components/win95/Win95Taskbar";
 import { Win95Window } from "@/components/win95/Win95Window";
@@ -15,7 +14,6 @@ export default async function Home() {
 
   return (
     <Win95Desktop>
-      <EpicVisualDecor />
       <Win95DraggableNote />
       <main className="flex min-h-0 flex-1 justify-center px-2 pb-2 pt-3 md:px-3">
         <Win95Window
@@ -23,7 +21,6 @@ export default async function Home() {
           icon={<span className="text-[14px] leading-none">📂</span>}
           menu={<Win95MenuBar />}
           status={<SkillTicker skills={c.skills} />}
-          titleTone="violet"
           className="flex h-[calc(100dvh-2.75rem)] max-h-[900px] min-h-0 flex-col"
         >
           <div className="win95-sunken m-1 flex min-h-0 flex-1 flex-col overflow-hidden bg-white">

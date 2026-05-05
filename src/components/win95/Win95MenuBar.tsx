@@ -11,11 +11,11 @@ const links = [
 
 export function Win95MenuBar() {
   return (
-    <div className="flex flex-wrap items-center gap-0 border-b border-w95-shadow bg-[#f7edf7] px-1 py-1 text-[13px] shadow-[0_1px_0_#fff]">
+    <div className="flex flex-wrap items-center gap-0 border-b border-w95-shadow bg-w95-face px-1 py-0.5 text-[13px] shadow-[0_1px_0_#fff]">
       {fake.map((m) => (
         <span
           key={m}
-          className="cursor-default rounded-sm px-2 py-0.5 hover:bg-[#6f2bff] hover:text-white"
+          className="cursor-default px-2 py-0.5 hover:bg-w95-navy hover:text-white"
           tabIndex={-1}
         >
           <span className="underline">{m[0]}</span>
@@ -28,14 +28,14 @@ export function Win95MenuBar() {
           <a
             key={l.href}
             href={l.href}
-            className="cursor-default rounded-sm px-2 py-0.5 text-[#4a22db] hover:bg-[#6f2bff] hover:text-white hover:no-underline"
+            className="cursor-default px-2 py-0.5 text-w95-link hover:bg-w95-navy hover:text-white hover:no-underline"
           >
             {l.label}
           </a>
         ))}
         <Link
           href="/admin"
-          className="cursor-default rounded-sm px-2 py-0.5 text-[#4a22db] hover:bg-[#6f2bff] hover:text-white hover:no-underline"
+          className="cursor-default px-2 py-0.5 text-w95-link hover:bg-w95-navy hover:text-white hover:no-underline"
         >
           Admin
         </Link>

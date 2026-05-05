@@ -12,7 +12,6 @@ export default function AdminPage() {
           title="Admin — Control Panel"
           icon={<span className="text-[14px]">⚙</span>}
           menu={<Win95MenuBar />}
-          titleTone="orange"
           className="flex h-[calc(100dvh-2.75rem)] max-h-[920px] w-full max-w-4xl min-h-0 flex-col"
         >
           <div className="win95-sunken m-1 flex min-h-0 flex-1 flex-col overflow-hidden bg-white">
