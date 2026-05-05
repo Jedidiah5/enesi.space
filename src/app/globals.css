@@ -1,0 +1,191 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-w95-desktop font-win text-[13px] text-w95-ink antialiased;
+}
+
+::selection {
+  @apply bg-w95-navy text-white;
+}
+
+/* Pastel desktop inspired by Epic Visual Pop-Ups */
+.win95-desktop {
+  background-color: #f8c9e6;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.26) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.26) 1px, transparent 1px),
+    radial-gradient(circle at 15% 20%, rgba(255, 255, 255, 0.35), transparent 42%),
+    linear-gradient(180deg, #f8d1ea 0%, #efb9ed 55%, #e3b3ff 100%);
+  background-size: 34px 34px, 34px 34px, auto, auto;
+  min-height: 100dvh;
+}
+
+/* Raised / sunken panels */
+.win95-raised {
+  box-shadow:
+    inset 1px 1px 0 #ffffff,
+    inset -1px -1px 0 #404040,
+    inset 2px 2px 0 #dfdfdf,
+    inset -2px -2px 0 #0a0a0a;
+  background: #c0c0c0;
+}
+
+.win95-sunken {
+  box-shadow:
+    inset 1px 1px 0 #404040,
+    inset -1px -1px 0 #ffffff,
+    inset 2px 2px 0 #0a0a0a,
+    inset -2px -2px 0 #dfdfdf;
+  background: #ffffff;
+}
+
+.win95-sunken-grey {
+  box-shadow:
+    inset 1px 1px 0 #404040,
+    inset -1px -1px 0 #ffffff,
+    inset 2px 2px 0 #0a0a0a,
+    inset -2px -2px 0 #dfdfdf;
+  background: #c0c0c0;
+}
+
+/* Title bar */
+.win95-titlebar {
+  background: linear-gradient(90deg, #6f2bff 0%, #bb43ff 60%, #ff66b8 100%);
+  color: #ffffff;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+}
+
+.win95-titlebar-inactive {
+  background: linear-gradient(90deg, #808080 0%, #b0b0b0 100%);
+  color: #c0c0c0;
+}
+
+/* Window outer chrome */
+.win95-window-shell {
+  padding: 2px;
+  background: #ececec;
+  box-shadow:
+    inset 1px 1px 0 #ffffff,
+    inset -1px -1px 0 #404040,
+    inset 2px 2px 0 #dfdfdf,
+    inset -2px -2px 0 #0a0a0a;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Group box */
+.win95-fieldset {
+  border-left: 1px solid #808080;
+  border-top: 1px solid #808080;
+  border-right: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
+  margin: 0.75rem 0;
+  padding: 0.75rem 0.6rem 0.6rem;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.win95-fieldset > legend {
+  padding: 0 4px;
+  margin-left: 4px;
+}
+
+/* Buttons */
+.win95-btn {
+  @apply inline-flex items-center justify-center px-3 py-0.5 text-[13px] leading-tight;
+  background: #f3f3f3;
+  box-shadow:
+    inset -1px -1px 0 #404040,
+    inset 1px 1px 0 #ffffff,
+    inset -2px -2px 0 #0a0a0a,
+    inset 2px 2px 0 #dfdfdf;
+  min-height: 23px;
+}
+
+.win95-btn:active {
+  box-shadow:
+    inset 1px 1px 0 #404040,
+    inset -1px -1px 0 #ffffff,
+    inset 2px 2px 0 #0a0a0a,
+    inset -2px -2px 0 #dfdfdf;
+  padding-top: 1px;
+  padding-left: 1px;
+}
+
+/* Title bar control squares */
+.win95-ctl {
+  width: 16px;
+  height: 14px;
+  font-size: 9px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #f1f1f1;
+  box-shadow:
+    inset -1px -1px 0 #404040,
+    inset 1px 1px 0 #ffffff,
+    inset -2px -2px 0 #0a0a0a,
+    inset 2px 2px 0 #dfdfdf;
+  color: #28143d;
+}
+
+.epic-sticker {
+  border: 2px solid #000;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 10px 20px rgba(68, 26, 88, 0.25);
+}
+
+.epic-float {
+  animation: epic-float 4.2s ease-in-out infinite;
+}
+
+@keyframes epic-float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.win95-ctl:active {
+  box-shadow:
+    inset 1px 1px 0 #404040,
+    inset -1px -1px 0 #ffffff,
+    inset 2px 2px 0 #0a0a0a,
+    inset -2px -2px 0 #dfdfdf;
+}
+
+/* Scrollbars — chunky */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #c0c0c0 #ececec;
+}
+
+*::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #c0c0c0;
+  box-shadow:
+    inset -1px -1px 0 #404040,
+    inset 1px 1px 0 #ffffff,
+    inset -2px -2px 0 #0a0a0a,
+    inset 2px 2px 0 #dfdfdf;
+}
+
+*::-webkit-scrollbar-track {
+  background: repeating-linear-gradient(45deg, #ececec, #ececec 2px, #dedede 2px, #dedede 4px);
+}

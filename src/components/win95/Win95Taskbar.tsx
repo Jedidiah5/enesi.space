@@ -1,0 +1,66 @@
+"use client";
+
+import Link from "next/link";
+import { useEffect, useState } from "react";
+
+type Props = { active?: "portfolio" | "admin" };
+
+export function Win95Taskbar({ active = "portfolio" }: Props) {
+  const [time, setTime] = useState("");
+
+  useEffect(() => {
+    const tick = () => {
+      setTime(
+        new Date().toLocaleTimeString(undefined, {
+          hour: "numeric",
+          minute: "2-digit",
+          hour12: true,
+        }),
+      );
+    };
+    tick();
+    const id = window.setInterval(tick, 1000);
+    return () => window.clearInterval(id);
+  }, []);
+
+  return (
+    <footer className="fixed bottom-0 left-0 right-0 z-[100] flex h-10 items-stretch gap-1 border-t border-white bg-[#edd9ef] px-1 py-1 shadow-[0_-1px_0_#404040]">
+      <Link
+        href="/"
+        className="win95-btn m-0.5 min-h-0 gap-1 bg-[#f7f2f8] px-2 font-bold tracking-tight"
+        aria-label="Start"
+      >
+        <span className="text-w95-title" aria-hidden>
+          ▣
+        </span>
+        Start
+      </Link>
+      <div className="mx-0.5 my-0.5 w-px bg-[#8c6a98] shadow-[1px_0_0_#fff]" aria-hidden />
+      <div className="flex flex-1 items-center gap-1 overflow-x-auto px-1">
+        <Link
+          href="/"
+          className={
+            active === "portfolio"
+              ? "win95-sunken-grey max-w-[200px] truncate bg-[#f6f1ff] px-2 py-0.5 text-left text-[12px] font-bold text-w95-ink"
+              : "win95-raised max-w-[200px] truncate bg-[#f2ebff] px-2 py-0.5 text-left text-[12px] text-w95-ink"
+          }
+        >
+          My Portfolio
+        </Link>
+        <Link
+          href="/admin"
+          className={
+            active === "admin"
+              ? "win95-sunken-grey max-w-[200px] truncate bg-[#f6f1ff] px-2 py-0.5 text-left text-[12px] font-bold text-w95-ink"
+              : "win95-raised max-w-[200px] truncate bg-[#f2ebff] px-2 py-0.5 text-left text-[12px] text-w95-ink"
+          }
+        >
+          Admin
+        </Link>
+      </div>
+      <div className="win95-sunken-grey my-0.5 flex min-w-[88px] items-center justify-center bg-[#f7f3ff] px-2 text-[12px] tabular-nums text-w95-ink">
+        {time || "—"}
+      </div>
+    </footer>
+  );
+}

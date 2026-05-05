@@ -1,0 +1,137 @@
+{
+  "meta": {
+    "title": "Enesi's Space — Full-stack developer",
+    "description": "Portfolio of Jedidiah Onotu — full-stack developer building fast, accessible web products."
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "Jedidiah Onotu",
+    "roleLine": "Full-stack developer · London, UK",
+    "bio": "BSc Information Technology @ Middlesex University — graduating soon. I design and build web applications end to end: APIs, databases, and interfaces that are fast, accessible, and maintainable.",
+    "ctaPrimary": "Let's Work Together",
+    "ctaSecondary": "View Resume",
+    "resumeUrl": "",
+    "stats": [
+      { "label": "Years Experience", "value": "2+" },
+      { "label": "Projects Completed", "value": "15+" },
+      { "label": "Based in", "value": "London" },
+      { "label": "Technologies", "value": "5+" }
+    ]
+  },
+  "about": {
+    "title": "About Me",
+    "paragraphs": [
+      "I'm an undergraduate Information Technology student at Middlesex University, based in London, United Kingdom, and I'm approaching graduation. I work across the stack—frontend, backend, and databases—to ship reliable, well-designed products.",
+      "I build with modern tools like React, Next.js, TypeScript, and Node, and I care about performance, security, and clear user experiences from API to interface.",
+      "I enjoy turning briefs and ideas into working software, learning new tools as the stack evolves, and collaborating on projects that are useful in the real world."
+    ],
+    "focusTitle": "Current Focus",
+    "focus": [
+      {
+        "title": "Final year & wrap-up",
+        "body": "Finishing my BSc IT degree at Middlesex, strengthening full-stack project work, and preparing for the next step after graduation."
+      },
+      {
+        "title": "London, UK",
+        "body": "Open to full-stack and software roles where I can keep building products end to end and grow with a strong team."
+      }
+    ]
+  },
+  "services": {
+    "title": "My Services",
+    "subtitle": "From database to deployment — I help turn ideas into reliable full-stack products",
+    "items": [
+      {
+        "title": "Full-stack web applications",
+        "body": "End-to-end builds: REST or serverless APIs, data persistence, auth, and polished front ends with React/Next.js."
+      },
+      {
+        "title": "Front-end & UI",
+        "body": "Responsive, accessible interfaces with strong UX, component-driven structure, and modern styling."
+      },
+      {
+        "title": "Back-end & integrations",
+        "body": "Server logic, third-party APIs, webhooks, and production-minded error handling and security."
+      },
+      {
+        "title": "Performance & quality",
+        "body": "Faster pages, lean bundles, and maintainable code so features stay shippable as products grow."
+      }
+    ]
+  },
+  "projects": {
+    "sectionTitle": "Featured Projects",
+    "sectionSubtitle": "Deep dive into some of my recent projects and their impact",
+    "items": [
+      {
+        "id": "enesi-space",
+        "title": "Enesi's Space (portfolio)",
+        "tagline": "Personal site — you're on it",
+        "description": "Show experience, services, and projects in one fast, accessible site that deploys easily.",
+        "role": "Solo: Next.js App Router, styling, and content.",
+        "stack": ["Next.js", "React", "TypeScript", "TailwindCSS", "Framer Motion"],
+        "outcome": "A living portfolio that matches my current role: full-stack developer in London, finishing a BSc in IT at Middlesex.",
+        "codeUrl": "https://github.com/Jedidiah5/Enesi-s-Space.github.io",
+        "liveUrl": "https://enesi-s-space-github-io.vercel.app/",
+        "featured": true
+      },
+      {
+        "id": "rest-dashboard",
+        "title": "REST API + dashboard",
+        "tagline": "Full-stack product-style app",
+        "description": "A CRUD app with a documented API, persisted data, and a client dashboard for managing records securely.",
+        "role": "Back end: routes, validation, and data layer. Front end: auth flows, tables, and responsive layout.",
+        "stack": ["Node.js", "TypeScript", "Next.js", "Tailwind CSS", "PostgreSQL"],
+        "outcome": "Replace this card with your repo, demo link, and screenshot when ready.",
+        "codeUrl": "",
+        "liveUrl": "",
+        "featured": true
+      },
+      {
+        "id": "capstone",
+        "title": "Capstone / final-year build",
+        "tagline": "End-to-end university project",
+        "description": "Deliver a scoped IT system that maps to degree outcomes: requirements, build, test, and deployment story.",
+        "role": "Full-stack ownership: architecture, implementation, and documentation for hand-in and demo.",
+        "stack": ["Next.js", "TypeScript", "Node.js", "Prisma", "React"],
+        "outcome": "Update with your actual module title, stack, and outcomes.",
+        "codeUrl": "",
+        "liveUrl": "",
+        "featured": false
+      },
+      {
+        "id": "integrations",
+        "title": "Integration & automation",
+        "tagline": "Services, webhooks, or serverless",
+        "description": "Connect external providers (e-mail, storage, LLMs) with a small, observable service layer in production.",
+        "role": "Wiring APIs, environment-based config, and error handling; optional UI for operators.",
+        "stack": ["TypeScript", "Node.js", "Vercel", "Tailwind CSS", "Next.js"],
+        "outcome": "Swap in a real case study and a link to the live or repo.",
+        "codeUrl": "",
+        "liveUrl": "",
+        "featured": false
+      }
+    ]
+  },
+  "skills": [
+    { "name": "JavaScript" },
+    { "name": "TypeScript" },
+    { "name": "React" },
+    { "name": "Next.js" },
+    { "name": "Node.js" },
+    { "name": "TailwindCSS" },
+    { "name": "HTML5" },
+    { "name": "Git" },
+    { "name": "Figma" }
+  ],
+  "contact": {
+    "headline": "Let's Build Something Great Together",
+    "sub": "Got a project in mind? Reach out—I'd love to hear from you.",
+    "email": "jedidiahonotu@gmail.com",
+    "locationLine": "Available remotely · Based in London, UK",
+    "socials": [
+      { "label": "GitHub", "href": "https://github.com/Jedidiah5" },
+      { "label": "LinkedIn", "href": "" }
+    ]
+  }
+}
