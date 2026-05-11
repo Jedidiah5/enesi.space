@@ -31,9 +31,12 @@ export default async function Home() {
               </ul>
             </BentoTile>
             <BentoTile variant="sage" className="flex flex-col justify-center" span="md:col-span-1 lg:col-span-1">
-              <p className="text-xs font-medium uppercase tracking-[0.15em] text-bento-sage">Now</p>
-              <p className="mt-2 text-lg font-semibold leading-snug text-bento-ink">{c.about.focus[0]?.title ?? "Open to roles"}</p>
-              <p className="bento-muted mt-2 text-sm leading-relaxed">{c.about.focus[0]?.body}</p>
+              <p className="text-xs font-medium uppercase tracking-[0.15em] text-bento-sage">Availability</p>
+              <p className="mt-2 text-lg font-semibold leading-snug text-bento-ink">Open for the right projects</p>
+              <p className="bento-muted mt-2 text-sm leading-relaxed">{c.contact.locationLine}</p>
+              <a href="#contact" className="mt-5 inline-flex text-sm font-semibold text-bento-accent underline-offset-2 hover:underline">
+                Get in touch →
+              </a>
             </BentoTile>
           </div>
 
