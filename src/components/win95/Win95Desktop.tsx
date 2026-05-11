@@ -3,5 +3,7 @@ import type { ReactNode } from "react";
 type Props = { children: ReactNode };
 
 export function Win95Desktop({ children }: Props) {
-  return <div className="win95-desktop flex min-h-dvh flex-col pb-9">{children}</div>;
+  return (
+    <div className="win95-desktop flex min-h-dvh flex-col pb-9 font-win text-w95-ink">{children}</div>
+  );
 }

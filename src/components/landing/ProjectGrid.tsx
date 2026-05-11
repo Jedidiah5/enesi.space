@@ -5,48 +5,73 @@ import type { Project } from "@/types/content";
 
 type Props = { items: Project[] };
 
-export function ProjectGrid({ items }: Props) {
+function ProjectCard({ p, i, className = "" }: { p: Project; i: number; className?: string }) {
   return (
-    <div className="grid gap-3 md:grid-cols-2">
-      {items.map((p, i) => (
-        <motion.article
-          key={p.id}
-          className="win95-raised flex flex-col p-1"
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-6%" }}
-          transition={{ delay: i * 0.04, duration: 0.25, ease: "easeOut" }}
-        >
-          <div className="win95-sunken flex flex-1 flex-col bg-white p-3">
-            <p className="text-[11px] font-bold text-w95-muted">{p.tagline}</p>
-            <h3 className="mt-0.5 text-[14px] font-bold text-w95-ink">{p.title}</h3>
-            <p className="mt-2 text-[12px] leading-snug text-w95-ink">{p.description}</p>
-            <p className="mt-2 text-[11px] text-w95-muted">
-              <span className="font-bold">Role:</span> {p.role}
-            </p>
-            <div className="mt-2 flex flex-wrap gap-1">
-              {p.stack.map((t) => (
-                <span key={t} className="win95-sunken-grey px-1.5 py-0.5 text-[10px] font-bold text-w95-ink">
-                  {t}
-                </span>
-              ))}
-            </div>
-            <p className="mt-2 text-[11px] leading-snug text-w95-muted">{p.outcome}</p>
-            <div className="mt-3 flex flex-wrap gap-2 text-[11px] font-bold">
-              {p.codeUrl ? (
-                <a className="text-w95-link hover:underline" href={p.codeUrl} target="_blank" rel="noreferrer">
-                  View code
-                </a>
-              ) : null}
-              {p.liveUrl ? (
-                <a className="text-w95-link hover:underline" href={p.liveUrl} target="_blank" rel="noreferrer">
-                  Live demo
-                </a>
-              ) : null}
-            </div>
-          </div>
-        </motion.article>
-      ))}
+    <motion.article
+      className={`group flex flex-col rounded-[1.65rem] border border-bento-line/70 bg-bento-tile/95 p-6 shadow-bento shadow-bentoTile backdrop-blur-sm transition hover:shadow-bento-lg md:p-7 ${className}`}
+      initial={{ opacity: 0, y: 14 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-8%" }}
+      transition={{ delay: i * 0.05, duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+    >
+      <div className="flex items-start justify-between gap-2">
+        <p className="text-xs font-medium uppercase tracking-wide text-bento-accent">{p.tagline}</p>
+        {p.featured ? (
+          <span className="shrink-0 rounded-full bg-bento-sageSoft px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-bento-sage">Featured</span>
+        ) : null}
+      </div>
+      <h3 className="mt-2 text-lg font-semibold tracking-tight text-bento-ink">{p.title}</h3>
+      <p className="bento-muted mt-3 flex-1 text-sm leading-relaxed">{p.description}</p>
+      <p className="mt-4 text-xs leading-relaxed text-bento-muted">
+        <span className="font-semibold text-bento-ink">Role:</span> {p.role}
+      </p>
+      <div className="mt-3 flex flex-wrap gap-1.5">
+        {p.stack.map((t) => (
+          <span key={t} className="rounded-md border border-bento-line/80 bg-bento-canvas/60 px-2 py-0.5 text-[11px] font-medium text-bento-ink">
+            {t}
+          </span>
+        ))}
+      </div>
+      <p className="mt-3 text-xs leading-relaxed text-bento-muted">{p.outcome}</p>
+      <div className="mt-5 flex flex-wrap gap-4 text-sm font-semibold">
+        {p.codeUrl ? (
+          <a className="text-bento-accent underline-offset-2 transition hover:underline" href={p.codeUrl} target="_blank" rel="noreferrer">
+            Code
+          </a>
+        ) : null}
+        {p.liveUrl ? (
+          <a className="text-bento-accent underline-offset-2 transition hover:underline" href={p.liveUrl} target="_blank" rel="noreferrer">
+            Live
+          </a>
+        ) : null}
+      </div>
+    </motion.article>
+  );
+}
+
+export function ProjectGrid({ items }: Props) {
+  const sorted = [...items].sort((a, b) => Number(b.featured) - Number(a.featured));
+  const [first, ...rest] = sorted;
+  const useBento = first?.featured && rest.length > 0;
+
+  if (!useBento) {
+    return (
+      <div className="grid gap-4 md:grid-cols-2 md:gap-5">
+        {sorted.map((p, i) => (
+          <ProjectCard key={p.id} p={p} i={i} />
+        ))}
+      </div>
+    );
+  }
+
+  return (
+    <div className="grid gap-4 md:grid-cols-12 md:gap-5 lg:grid-rows-[auto_auto]">
+      <ProjectCard p={first} i={0} className="md:col-span-12 lg:col-span-7 lg:row-span-2 lg:min-h-[320px]" />
+      <div className="grid gap-4 md:col-span-12 md:grid-cols-2 lg:col-span-5 lg:grid-cols-1 lg:gap-5">
+        {rest.map((p, i) => (
+          <ProjectCard key={p.id} p={p} i={i + 1} />
+        ))}
+      </div>
     </div>
   );
 }

@@ -7,11 +7,23 @@ html {
 }
 
 body {
-  @apply bg-w95-desktop font-win text-[13px] text-w95-ink antialiased;
+  @apply min-h-dvh bg-bento-canvas text-[15px] leading-relaxed text-bento-ink antialiased;
+}
+
+.bento-canvas {
+  background-color: #f3f0ea;
+  background-image:
+    radial-gradient(ellipse 120% 80% at 50% -20%, rgba(196, 92, 62, 0.07), transparent 55%),
+    radial-gradient(circle at 100% 0%, rgba(90, 111, 86, 0.06) 0, transparent 42%),
+    radial-gradient(circle at 0% 100%, rgba(212, 206, 195, 0.5) 0, transparent 45%);
+}
+
+.bento-muted {
+  @apply text-bento-muted;
 }
 
 ::selection {
-  @apply bg-w95-navy text-white;
+  @apply bg-bento-accentSoft text-bento-ink;
 }
 
 /* Classic Win95 “teal + noise” desktop */
