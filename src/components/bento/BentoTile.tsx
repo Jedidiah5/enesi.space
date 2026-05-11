@@ -11,13 +11,13 @@ type Props = {
 
 const variants: Record<NonNullable<Props["variant"]>, string> = {
   default:
-    "border-bento-line/70 bg-bento-tile/95 text-bento-ink shadow-bento shadow-bentoTile backdrop-blur-sm",
+    "border-white/[0.08] bg-white/[0.04] text-bento-ink shadow-bento shadow-bentoTile backdrop-blur-xl",
   accent:
-    "border-bento-accent/25 bg-gradient-to-br from-bento-accentSoft/90 to-bento-tile text-bento-ink shadow-bento-lg",
+    "border-bento-accent/30 bg-gradient-to-br from-bento-accent/15 via-bento-accentSoft/40 to-bento-surface text-bento-ink shadow-bento-lg backdrop-blur-xl",
   sage:
-    "border-bento-sage/30 bg-gradient-to-br from-bento-sageSoft/80 to-bento-tile text-bento-ink shadow-bento",
+    "border-bento-sage/25 bg-gradient-to-br from-bento-sageSoft/60 to-bento-surface text-bento-ink shadow-bento backdrop-blur-xl",
   dark:
-    "border-bento-ink/20 bg-bento-ink text-[#f3f0ea] shadow-bento-lg [&_.bento-muted]:text-white/65",
+    "border-white/[0.08] bg-bento-void text-zinc-100 shadow-bento-lg backdrop-blur-xl [&_.bento-muted]:text-zinc-400",
 };
 
 export function BentoTile({ children, id, className = "", span = "", variant = "default" }: Props) {

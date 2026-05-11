@@ -10,16 +10,18 @@ const config: Config = {
     extend: {
       colors: {
         bento: {
-          canvas: "#f3f0ea",
-          canvas2: "#ebe6dd",
-          tile: "#fffcf7",
-          ink: "#14120f",
-          muted: "#5c5852",
-          line: "#d4cec3",
+          canvas: "#09090b",
+          canvas2: "#0c0c0e",
+          void: "#0a0a0a",
+          surface: "#141416",
+          tile: "#18181b",
+          ink: "#f4f4f5",
+          muted: "#a1a1aa",
+          line: "#3f3f46",
           accent: "#c45c3e",
-          accentSoft: "#f0d4cc",
-          sage: "#5a6f56",
-          sageSoft: "#dce5da",
+          accentSoft: "#2a1814",
+          sage: "#94a3b8",
+          sageSoft: "#1e293b",
         },
         w95: {
           desktop: "#008080",
@@ -44,9 +46,10 @@ const config: Config = {
         bento: ["var(--font-bento)", "system-ui", "sans-serif"],
       },
       boxShadow: {
-        bento: "0 1px 2px rgba(20, 18, 15, 0.04), 0 8px 24px rgba(20, 18, 15, 0.06)",
-        "bento-lg": "0 2px 4px rgba(20, 18, 15, 0.04), 0 16px 40px rgba(20, 18, 15, 0.08)",
-        bentoTile: "inset 0 1px 0 rgba(255, 255, 255, 0.65)",
+        bento: "0 1px 0 rgba(255,255,255,0.04) inset, 0 8px 32px rgba(0,0,0,0.45)",
+        "bento-lg": "0 1px 0 rgba(255,255,255,0.06) inset, 0 16px 48px rgba(0,0,0,0.55)",
+        bentoTile: "inset 0 1px 0 rgba(255, 255, 255, 0.06)",
+        bentoGlass: "0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.08)",
         w95out:
           "inset 1px 1px 0 #ffffff, inset -1px -1px 0 #404040, inset 2px 2px 0 #dfdfdf, inset -2px -2px 0 #0a0a0a",
         w95in:

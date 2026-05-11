@@ -18,7 +18,7 @@ export function BentoHero({ hero }: Props) {
         {hero.greeting}
       </motion.p>
       <motion.h1
-        className="mt-2 font-semibold tracking-tight text-bento-ink"
+        className="mt-2 font-semibold tracking-tight text-bento-accent"
         style={{ fontSize: "clamp(1.75rem, 4vw, 2.75rem)", lineHeight: 1.1 }}
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
@@ -27,7 +27,7 @@ export function BentoHero({ hero }: Props) {
         {hero.name}
       </motion.h1>
       <motion.p
-        className="mt-2 text-sm font-medium text-bento-sage md:text-base"
+        className="mt-2 text-sm font-medium text-zinc-400 md:text-base"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.12, duration: 0.35 }}
@@ -59,12 +59,12 @@ export function BentoHero({ hero }: Props) {
             href={hero.resumeUrl}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center justify-center rounded-full border border-bento-line bg-bento-tile px-5 py-2.5 text-sm font-semibold text-bento-ink transition hover:border-bento-ink/25"
+            className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/[0.06] px-5 py-2.5 text-sm font-semibold text-bento-ink transition hover:border-white/25 hover:bg-white/[0.1]"
           >
             {hero.ctaSecondary}
           </a>
         ) : (
-          <span className="inline-flex items-center rounded-full border border-dashed border-bento-line px-4 py-2 text-xs text-bento-muted">
+          <span className="inline-flex items-center rounded-full border border-dashed border-white/20 px-4 py-2 text-xs text-bento-muted">
             {hero.ctaSecondary}
             <span className="mx-1 opacity-50">·</span>
             <Link href="/admin" className="text-bento-accent underline-offset-2 hover:underline">

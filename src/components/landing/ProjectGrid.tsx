@@ -8,7 +8,7 @@ type Props = { items: Project[] };
 function ProjectCard({ p, i, className = "" }: { p: Project; i: number; className?: string }) {
   return (
     <motion.article
-      className={`group flex flex-col rounded-[1.65rem] border border-bento-line/70 bg-bento-tile/95 p-6 shadow-bento shadow-bentoTile backdrop-blur-sm transition hover:shadow-bento-lg md:p-7 ${className}`}
+      className={`group flex flex-col rounded-[1.65rem] border border-white/[0.08] bg-white/[0.04] p-6 shadow-bento shadow-bentoTile backdrop-blur-xl transition hover:shadow-bento-lg md:p-7 ${className}`}
       initial={{ opacity: 0, y: 14 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-8%" }}
@@ -17,7 +17,9 @@ function ProjectCard({ p, i, className = "" }: { p: Project; i: number; classNam
       <div className="flex items-start justify-between gap-2">
         <p className="text-xs font-medium uppercase tracking-wide text-bento-accent">{p.tagline}</p>
         {p.featured ? (
-          <span className="shrink-0 rounded-full bg-bento-sageSoft px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-bento-sage">Featured</span>
+          <span className="shrink-0 rounded-full border border-bento-accent/35 bg-bento-accent/15 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-bento-accent">
+            Featured
+          </span>
         ) : null}
       </div>
       <h3 className="mt-2 text-lg font-semibold tracking-tight text-bento-ink">{p.title}</h3>
@@ -27,7 +29,7 @@ function ProjectCard({ p, i, className = "" }: { p: Project; i: number; classNam
       </p>
       <div className="mt-3 flex flex-wrap gap-1.5">
         {p.stack.map((t) => (
-          <span key={t} className="rounded-md border border-bento-line/80 bg-bento-canvas/60 px-2 py-0.5 text-[11px] font-medium text-bento-ink">
+          <span key={t} className="rounded-md border border-white/10 bg-bento-void/40 px-2 py-0.5 text-[11px] font-medium text-bento-muted">
             {t}
           </span>
         ))}

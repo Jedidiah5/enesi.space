@@ -11,19 +11,24 @@ body {
 }
 
 .bento-canvas {
-  background-color: #f3f0ea;
+  background-color: #09090b;
   background-image:
-    radial-gradient(ellipse 120% 80% at 50% -20%, rgba(196, 92, 62, 0.07), transparent 55%),
-    radial-gradient(circle at 100% 0%, rgba(90, 111, 86, 0.06) 0, transparent 42%),
-    radial-gradient(circle at 0% 100%, rgba(212, 206, 195, 0.5) 0, transparent 45%);
+    radial-gradient(ellipse 100% 80% at 50% -30%, rgba(196, 92, 62, 0.12), transparent 55%),
+    radial-gradient(circle at 100% 0%, rgba(196, 92, 62, 0.06) 0, transparent 40%),
+    radial-gradient(circle at 0% 100%, rgba(24, 24, 27, 0.9) 0, transparent 50%);
 }
 
 .bento-muted {
   @apply text-bento-muted;
 }
 
+/* Frosted pill navbar (see BentoNav) */
+.liquid-nav {
+  isolation: isolate;
+}
+
 ::selection {
-  @apply bg-bento-accentSoft text-bento-ink;
+  @apply bg-bento-accent/35 text-bento-ink;
 }
 
 /* Classic Win95 “teal + noise” desktop */
@@ -151,18 +156,39 @@ body {
     inset -2px -2px 0 #dfdfdf;
 }
 
-/* Scrollbars — chunky */
-* {
+/* Scrollbars — dark bento */
+.bento-canvas * {
+  scrollbar-width: thin;
+  scrollbar-color: #3f3f46 #18181b;
+}
+
+.bento-canvas *::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+.bento-canvas *::-webkit-scrollbar-thumb {
+  background: #3f3f46;
+  border-radius: 9999px;
+  border: 3px solid #18181b;
+}
+
+.bento-canvas *::-webkit-scrollbar-track {
+  background: #18181b;
+}
+
+/* Scrollbars — chunky (admin / Win95) */
+.win95-desktop * {
   scrollbar-width: auto;
   scrollbar-color: #c0c0c0 #ececec;
 }
 
-*::-webkit-scrollbar {
+.win95-desktop *::-webkit-scrollbar {
   width: 16px;
   height: 16px;
 }
 
-*::-webkit-scrollbar-thumb {
+.win95-desktop *::-webkit-scrollbar-thumb {
   background: #c0c0c0;
   box-shadow:
     inset -1px -1px 0 #404040,
@@ -171,6 +197,6 @@ body {
     inset 2px 2px 0 #dfdfdf;
 }
 
-*::-webkit-scrollbar-track {
+.win95-desktop *::-webkit-scrollbar-track {
   background: repeating-linear-gradient(45deg, #ececec, #ececec 2px, #dedede 2px, #dedede 4px);
 }
