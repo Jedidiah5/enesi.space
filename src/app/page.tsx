@@ -1,7 +1,8 @@
 import { BentoHero } from "@/components/bento/BentoHero";
+import { HangingTags } from "@/components/bento/HangingTags";
 import { BentoNav } from "@/components/bento/BentoNav";
 import { BentoTile } from "@/components/bento/BentoTile";
-import { ProjectGrid } from "@/components/landing/ProjectGrid";
+import { ProjectExpandGrid } from "@/components/landing/ProjectExpandGrid";
 import { getSiteContent } from "@/lib/content/get-content";
 
 export default async function Home() {
@@ -14,7 +15,10 @@ export default async function Home() {
         <div className="grid auto-rows-min grid-cols-1 gap-4 md:grid-cols-12 md:gap-5">
           {/* Hero */}
           <BentoTile span="md:col-span-12 lg:col-span-7 lg:row-span-1" className="min-h-[320px] lg:min-h-[360px]">
-            <BentoHero hero={c.hero} />
+            <div className="grid h-full gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-end lg:gap-6">
+              <BentoHero hero={c.hero} />
+              <HangingTags lines={c.skills.map((s) => s.name)} className="max-lg:mx-auto max-lg:max-w-md" />
+            </div>
           </BentoTile>
 
           {/* Stats + availability stack */}
@@ -94,7 +98,7 @@ export default async function Home() {
               <p className="text-xs font-medium uppercase tracking-[0.2em] text-bento-muted">{c.projects.sectionSubtitle}</p>
               <h2 className="mt-1 text-xl font-semibold tracking-tight text-bento-ink md:text-2xl">{c.projects.sectionTitle}</h2>
             </div>
-            <ProjectGrid items={c.projects.items} />
+            <ProjectExpandGrid items={c.projects.items} />
           </div>
 
           {/* Contact */}
