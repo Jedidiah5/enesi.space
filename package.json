@@ -12,16 +12,20 @@
     "@eslint/eslintrc": "3.2.0"
   },
   "dependencies": {
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.6.1",
     "@supabase/supabase-js": "^2.49.1",
     "framer-motion": "^12.4.7",
     "next": "15.3.9",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "three": "^0.184.0"
   },
   "devDependencies": {
     "@types/node": "^22",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/three": "^0.184.1",
     "eslint": "^9.15.0",
     "eslint-config-next": "15.3.9",
     "postcss": "^8",

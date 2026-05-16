@@ -1,5 +1,6 @@
 import { BentoHero } from "@/components/bento/BentoHero";
 import { HangingTags } from "@/components/bento/HangingTags";
+import { HeroCharacter3D } from "@/components/three/HeroCharacter3D";
 import { BentoNav } from "@/components/bento/BentoNav";
 import { BentoTile } from "@/components/bento/BentoTile";
 import { ProjectExpandGrid } from "@/components/landing/ProjectExpandGrid";
@@ -14,15 +15,16 @@ export default async function Home() {
       <main className="mx-auto max-w-6xl px-4 py-8 md:px-6 md:py-12">
         <div className="grid auto-rows-min grid-cols-1 gap-4 md:grid-cols-12 md:gap-5">
           {/* Hero */}
-          <BentoTile span="md:col-span-12 lg:col-span-7 lg:row-span-1" className="min-h-[320px] lg:min-h-[360px]">
-            <div className="grid h-full gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-end lg:gap-6">
+          <BentoTile span="md:col-span-12 lg:col-span-8 lg:row-span-1" className="min-h-[320px] lg:min-h-[400px]">
+            <div className="grid h-full gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(220px,280px)_minmax(0,0.9fr)] lg:items-end lg:gap-5">
               <BentoHero hero={c.hero} />
+              <HeroCharacter3D className="mx-auto w-full max-w-[280px] max-lg:order-first" />
               <HangingTags lines={c.skills.map((s) => s.name)} className="max-lg:mx-auto max-lg:max-w-md" />
             </div>
           </BentoTile>
 
           {/* Stats + availability stack */}
-          <div className="grid gap-4 md:col-span-12 md:grid-cols-2 lg:col-span-5 lg:grid-cols-1 lg:grid-rows-[1fr_auto] lg:gap-5">
+          <div className="grid gap-4 md:col-span-12 md:grid-cols-2 lg:col-span-4 lg:grid-cols-1 lg:grid-rows-[1fr_auto] lg:gap-5">
             <BentoTile variant="dark" className="flex flex-col justify-between" span="md:col-span-1 lg:col-span-1">
               <p className="text-xs font-medium uppercase tracking-[0.2em] text-white/55">At a glance</p>
               <ul className="mt-6 space-y-4">
