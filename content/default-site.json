@@ -44,6 +44,54 @@
         "title": "London, UK",
         "body": "Open to full-stack and software roles where I can keep building products end to end and grow with a strong team."
       }
+    ],
+    "pageImageUrl": "",
+    "phonetic": "/jed-id-eye-ah oh-no-too/",
+    "bioLong": "I'm a full-stack developer based in London with 2+ years building web products end to end—from APIs and databases to polished React and Next.js interfaces. I'm finishing my BSc in Information Technology at Middlesex University and care about shipping fast, accessible, maintainable software that works in the real world.",
+    "socialStats": [
+      {
+        "id": "site",
+        "badge": "You're here!",
+        "badgeTone": "green",
+        "title": "My website",
+        "subtitle": "Portfolio & projects",
+        "href": "/"
+      },
+      {
+        "id": "github",
+        "badge": "Open source",
+        "badgeTone": "grey",
+        "title": "GitHub",
+        "subtitle": "Code & side projects",
+        "href": "https://github.com/Jedidiah5"
+      },
+      {
+        "id": "linkedin",
+        "badge": "Let's connect",
+        "badgeTone": "orange",
+        "title": "LinkedIn",
+        "subtitle": "Professional network",
+        "href": ""
+      },
+      {
+        "id": "email",
+        "badge": "Say hello",
+        "badgeTone": "pink",
+        "title": "Email",
+        "subtitle": "Open to opportunities",
+        "href": "mailto:jedidiahonotu@gmail.com"
+      }
+    ],
+    "brandsTitle": "Tools & tech I work with",
+    "brands": [
+      { "name": "Next.js" },
+      { "name": "React" },
+      { "name": "TypeScript" },
+      { "name": "Node.js" },
+      { "name": "PostgreSQL" },
+      { "name": "Tailwind" },
+      { "name": "Vercel" },
+      { "name": "Git" }
     ]
   },
   "services": {

@@ -78,7 +78,7 @@ export function AnabolioHero({
         </div>
 
         {/* Right — bio card */}
-        <div id="about" className="scroll-mt-28 flex flex-col justify-center md:pl-4 lg:pl-8">
+        <div className="flex flex-col justify-center md:pl-4 lg:pl-8">
           <div className="flex gap-4">
             <ProfileAvatar name={name} src={profileImageUrl} />
             <div className="min-w-0 pt-0.5">

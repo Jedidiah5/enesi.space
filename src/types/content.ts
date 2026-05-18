@@ -26,6 +26,20 @@ export type Project = {
   gridSize?: ProjectGridSize;
 };
 
+export type AboutSocialStat = {
+  id: string;
+  badge: string;
+  badgeTone: "green" | "orange" | "grey" | "pink";
+  title: string;
+  subtitle: string;
+  href?: string;
+};
+
+export type AboutBrand = {
+  name: string;
+  logoUrl?: string;
+};
+
 export type SiteContent = {
   meta: {
     title: string;
@@ -60,6 +74,14 @@ export type SiteContent = {
     paragraphs: string[];
     focusTitle: string;
     focus: { title: string; body: string }[];
+    /** Large portrait on the About page */
+    pageImageUrl?: string;
+    phonetic?: string;
+    /** Main bio copy on About (falls back to paragraphs joined) */
+    bioLong?: string;
+    socialStats?: AboutSocialStat[];
+    brandsTitle?: string;
+    brands?: AboutBrand[];
   };
   services: {
     title: string;

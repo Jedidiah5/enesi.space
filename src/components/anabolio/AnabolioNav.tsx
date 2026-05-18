@@ -1,38 +1,22 @@
 "use client";
 
 import Link from "next/link";
-import { useCallback, useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { PixelSticker } from "./PixelSticker";
 
-type NavLink = { href: string; label: string; id: string };
-
-const links: NavLink[] = [
-  { href: "#work", label: "Work", id: "work" },
-  { href: "#about", label: "About", id: "about" },
+const links = [
+  { href: "/#work", label: "Work", id: "work" as const },
+  { href: "/about", label: "About", id: "about" as const },
 ];
 
 type Props = {
   siteName: string;
+  active?: "work" | "about";
 };
 
-function activeFromHash(hash: string): string {
-  if (hash === "#about") return "about";
-  return "work";
-}
-
-export function AnabolioNav({ siteName }: Props) {
-  const [active, setActive] = useState("work");
-
-  const sync = useCallback(() => {
-    if (typeof window === "undefined") return;
-    setActive(activeFromHash(window.location.hash));
-  }, []);
-
-  useEffect(() => {
-    sync();
-    window.addEventListener("hashchange", sync);
-    return () => window.removeEventListener("hashchange", sync);
-  }, [sync]);
+export function AnabolioNav({ siteName, active: activeProp }: Props) {
+  const pathname = usePathname();
+  const active = activeProp ?? (pathname === "/about" ? "about" : "work");
 
   return (
     <header className="sticky top-0 z-50 bg-ana-canvas/95 backdrop-blur-sm">
@@ -49,17 +33,16 @@ export function AnabolioNav({ siteName }: Props) {
           {links.map((item) => {
             const isActive = active === item.id;
             return (
-              <a
+              <Link
                 key={item.id}
                 href={item.href}
-                onClick={() => setActive(item.id)}
                 className={[
                   "rounded-full px-5 py-2 text-sm font-semibold transition",
                   isActive ? "bg-ana-canvas2 text-ana-ink" : "text-ana-muted hover:text-ana-ink",
                 ].join(" ")}
               >
                 {item.label}
-              </a>
+              </Link>
             );
           })}
         </nav>
