@@ -1,37 +1,118 @@
 "use client";
 
+import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
-import { AnabolioHangingTags } from "./AnabolioHangingTags";
+import { HERO_STICKERS, PixelSticker } from "./PixelSticker";
+import { SocialIcons } from "./SocialIcons";
 
-type TagLink = { label: string; href: string };
+type Social = { label: string; href: string };
 
 type Props = {
-  displayLines: string[];
-  tagLinks: TagLink[];
+  helloHeadline: string;
+  roleSubtitle: string;
+  introHeading: string;
+  bio: string;
+  profileImageUrl?: string;
+  name: string;
+  socials: Social[];
+  email?: string;
 };
 
-export function AnabolioHero({ displayLines, tagLinks }: Props) {
+function ProfileAvatar({ name, src }: { name: string; src?: string }) {
+  const initials = name
+    .split(/\s+/)
+    .map((p) => p[0])
+    .join("")
+    .slice(0, 2)
+    .toUpperCase();
+
+  if (src) {
+    return (
+      <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-xl bg-ana-canvas2 ring-1 ring-ana-line md:h-16 md:w-16">
+        <Image src={src} alt="" fill className="object-cover" sizes="64px" />
+      </div>
+    );
+  }
+
+  return (
+    <div
+      className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-ana-accent/30 to-ana-accentSoft text-sm font-bold text-ana-ink ring-1 ring-ana-line md:h-16 md:w-16"
+      aria-hidden
+    >
+      {initials}
+    </div>
+  );
+}
+
+export function AnabolioHero({
+  helloHeadline,
+  roleSubtitle,
+  introHeading,
+  bio,
+  profileImageUrl,
+  name,
+  socials,
+  email,
+}: Props) {
   const reduce = useReducedMotion();
 
   return (
-    <section className="relative overflow-hidden pt-6 pb-4 md:pt-10 md:pb-8">
-      <div className="mx-auto grid max-w-6xl gap-8 px-5 md:grid-cols-[1fr_auto] md:items-end md:gap-6 md:px-8">
-        <div className="min-w-0">
-          {displayLines.map((line, i) => (
-            <motion.h1
-              key={`${line}-${i}`}
-              className="font-display leading-[0.92] tracking-tight text-ana-ink"
-              style={{ fontSize: "clamp(2.75rem, 11vw, 6.5rem)" }}
-              initial={reduce ? false : { opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
-            >
-              {line}
-            </motion.h1>
-          ))}
+    <section className="border-b border-ana-line/40 pb-12 pt-4 md:pb-16 md:pt-6">
+      <div className="mx-auto grid max-w-6xl gap-10 px-5 md:grid-cols-2 md:gap-12 md:px-8 lg:gap-16">
+        {/* Left — stickers + greeting */}
+        <div className="flex flex-col justify-center">
+          <div className="mb-6 flex items-end gap-3 md:mb-8 md:gap-4">
+            {HERO_STICKERS.map((variant, i) => (
+              <motion.div
+                key={variant}
+                initial={reduce ? false : { opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.05 + i * 0.07, duration: 0.4 }}
+                className="transition-transform hover:-translate-y-1"
+              >
+                <PixelSticker variant={variant} size={i === 1 || i === 2 ? 52 : 48} />
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.h1
+            className="text-[clamp(2rem,5.5vw,3.25rem)] font-bold leading-[1.08] tracking-tight text-ana-ink"
+            initial={reduce ? false : { opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.45, delay: 0.15 }}
+          >
+            {helloHeadline}
+          </motion.h1>
+
+          <motion.p
+            className="mt-2 text-lg text-ana-muted md:text-xl"
+            initial={reduce ? false : { opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.4, delay: 0.22 }}
+          >
+            {roleSubtitle}
+          </motion.p>
+
+          <motion.div
+            className="mt-6"
+            initial={reduce ? false : { opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.4, delay: 0.28 }}
+          >
+            <SocialIcons socials={socials} email={email} />
+          </motion.div>
         </div>
 
-        <AnabolioHangingTags links={tagLinks} className="md:justify-self-end" />
+        {/* Right — bio card */}
+        <div id="about" className="scroll-mt-28 flex flex-col justify-center md:pl-4 lg:pl-8">
+          <div className="flex gap-4">
+            <ProfileAvatar name={name} src={profileImageUrl} />
+            <div className="min-w-0 pt-0.5">
+              <h2 className="text-lg font-bold text-ana-ink md:text-xl">{introHeading}</h2>
+              <p className="mt-3 text-[15px] leading-[1.65] text-ana-muted md:text-base">{bio}</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

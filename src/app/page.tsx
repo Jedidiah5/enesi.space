@@ -1,38 +1,37 @@
 import { AnabolioFooter } from "@/components/anabolio/AnabolioFooter";
 import { AnabolioHero } from "@/components/anabolio/AnabolioHero";
-import { AnabolioIntro } from "@/components/anabolio/AnabolioIntro";
 import { AnabolioNav } from "@/components/anabolio/AnabolioNav";
 import { AnabolioProjects } from "@/components/anabolio/AnabolioProjects";
 import { getSiteContent } from "@/lib/content/get-content";
 
-function displayLinesFromHero(hero: Awaited<ReturnType<typeof getSiteContent>>["hero"]) {
-  if (hero.displayLines?.length) return hero.displayLines;
-  const parts = hero.roleLine.split("·")[0]?.trim() || hero.roleLine;
-  return parts.split(/\s+/).length > 2 ? [parts] : [hero.name.split(" ")[0] || hero.name, parts];
+function helloHeadline(hero: Awaited<ReturnType<typeof getSiteContent>>["hero"]) {
+  if (hero.helloHeadline) return hero.helloHeadline;
+  const first = hero.name.split(/\s+/)[0] || hero.name;
+  return `I'm ${first}, hello!`;
 }
 
-function hangingTagLinks(
-  socials: { label: string; href: string }[],
-): { label: string; href: string }[] {
-  const about = { label: "About", href: "#about" };
-  const fromSocial = socials
-    .filter((s) => s.href)
-    .slice(0, 4)
-    .map((s) => ({ label: s.label, href: s.href }));
-  return [about, ...fromSocial];
+function roleSubtitle(hero: Awaited<ReturnType<typeof getSiteContent>>["hero"]) {
+  if (hero.roleSubtitle) return hero.roleSubtitle;
+  return hero.roleLine.split("·")[0]?.trim() || hero.roleLine;
 }
 
 export default async function Home() {
   const c = await getSiteContent();
-  const displayLines = displayLinesFromHero(c.hero);
-  const tagLinks = hangingTagLinks(c.contact.socials);
 
   return (
     <div className="ana-canvas min-h-dvh">
-      <AnabolioNav siteName={c.hero.name} socials={c.contact.socials} />
+      <AnabolioNav siteName={c.hero.name} />
       <main>
-        <AnabolioHero displayLines={displayLines} tagLinks={tagLinks} />
-        <AnabolioIntro heading={c.hero.introHeading ?? `Hey, I'm ${c.hero.name.split(" ")[0]} 👋`} bio={c.hero.bio} />
+        <AnabolioHero
+          name={c.hero.name}
+          helloHeadline={helloHeadline(c.hero)}
+          roleSubtitle={roleSubtitle(c.hero)}
+          introHeading={c.hero.introHeading ?? "Hey, guess who? 👋"}
+          bio={c.hero.bio}
+          profileImageUrl={c.hero.profileImageUrl || undefined}
+          socials={c.contact.socials}
+          email={c.contact.email}
+        />
         <AnabolioProjects sectionTitle={c.projects.sectionTitle} items={c.projects.items} />
       </main>
       <AnabolioFooter

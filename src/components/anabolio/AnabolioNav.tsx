@@ -36,7 +36,7 @@ export function AnabolioNav({ siteName }: Props) {
 
   return (
     <header className="sticky top-0 z-50 bg-ana-canvas/95 backdrop-blur-sm">
-      <motion className="mx-auto grid max-w-6xl grid-cols-[1fr_auto_1fr] items-center gap-4 px-5 py-5 md:px-8">
+      <div className="mx-auto grid max-w-6xl grid-cols-[1fr_auto_1fr] items-center gap-4 px-5 py-5 md:px-8">
         <Link href="/" className="flex items-center gap-2.5 justify-self-start">
           <PixelSticker variant="logo" size={28} />
           <span className="text-base font-bold tracking-tight text-ana-ink md:text-lg">{siteName}</span>
@@ -64,12 +64,8 @@ export function AnabolioNav({ siteName }: Props) {
           })}
         </nav>
 
-        <div className="justify-self-end w-8" aria-hidden />
-      </motion>
+        <div className="w-8 justify-self-end" aria-hidden />
+      </div>
     </header>
   );
-}
-
-function motion({ className, children }: { className?: string; children: React.ReactNode }) {
-  return <motion className={className}>{children}</motion>;
 }

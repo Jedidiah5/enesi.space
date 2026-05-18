@@ -42,6 +42,11 @@ export type SiteContent = {
     stats: { label: string; value: string }[];
     /** Large display lines, e.g. ["UI &", "UX", "Designer"] */
     displayLines?: string[];
+    /** e.g. "I'm Jedidiah, hello!" */
+    helloHeadline?: string;
+    /** Short role under headline, e.g. "Full-stack Developer" */
+    roleSubtitle?: string;
+    profileImageUrl?: string;
     introHeading?: string;
     footerRoleLine?: string;
     footerNote?: string;

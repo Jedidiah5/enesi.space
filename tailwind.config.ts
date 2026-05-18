@@ -54,7 +54,6 @@ const config: Config = {
         sans: ["Tahoma", "Segoe UI", "MS Sans Serif", "sans-serif"],
         win: ["Tahoma", "Segoe UI", "MS Sans Serif", "sans-serif"],
         body: ["var(--font-body)", "Manrope", "system-ui", "sans-serif"],
-        display: ["var(--font-display)", "Rubik Bubbles", "cursive"],
         bento: ["var(--font-body)", "system-ui", "sans-serif"],
       },
       boxShadow: {

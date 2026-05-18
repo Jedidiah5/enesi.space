@@ -3,17 +3,11 @@
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
-import type { Project, ProjectGridSize } from "@/types/content";
+import type { Project } from "@/types/content";
 
 type Props = {
   sectionTitle: string;
   items: Project[];
-};
-
-const gridClass: Record<ProjectGridSize, string> = {
-  sm: "md:col-span-4 lg:col-span-4",
-  md: "md:col-span-6 lg:col-span-6",
-  lg: "md:col-span-12 lg:col-span-12",
 };
 
 function projectHref(p: Project) {
@@ -27,6 +21,16 @@ function inferLinkLabel(p: Project): string {
   return "case study";
 }
 
+function LinkPill({ label, hasLink }: { label: string; hasLink: boolean }) {
+  const text = label.toUpperCase();
+  return (
+    <span className="inline-flex items-center gap-0.5 rounded-md border border-ana-line bg-white px-2 py-0.5 text-[10px] font-bold tracking-wide text-ana-muted">
+      {text}
+      {hasLink ? <span aria-hidden>↗</span> : null}
+    </span>
+  );
+}
+
 function ProjectCard({
   project,
   onSelect,
@@ -36,51 +40,42 @@ function ProjectCard({
   onSelect: () => void;
   reduce: boolean;
 }) {
-  const size = project.gridSize ?? (project.featured ? "lg" : "md");
   const href = projectHref(project);
   const meta = [project.client, project.year].filter(Boolean).join(" · ");
 
   return (
     <motion.article
-      layout
-      className={`group flex flex-col ${gridClass[size]}`}
-      initial={reduce ? false : { opacity: 0, scale: 0.96, y: 40 }}
-      whileInView={{ opacity: 1, scale: 1, y: 0 }}
-      viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+      initial={reduce ? false : { opacity: 0, y: 28 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-40px" }}
+      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+      className="group"
     >
       <button
         type="button"
         onClick={onSelect}
-        className="flex h-full flex-col text-left outline-none focus-visible:ring-2 focus-visible:ring-ana-accent focus-visible:ring-offset-2 focus-visible:ring-offset-ana-canvas"
+        className="flex w-full flex-col text-left outline-none focus-visible:ring-2 focus-visible:ring-ana-accent focus-visible:ring-offset-2 focus-visible:ring-offset-ana-canvas"
       >
-        <div className="relative aspect-[508/330] w-full overflow-hidden rounded-2xl bg-ana-surface ring-1 ring-ana-line/80 transition duration-300 group-hover:scale-[1.02] group-hover:shadow-[0_20px_50px_rgba(15,15,20,0.1)]">
+        <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-ana-surface ring-1 ring-ana-line/70 transition duration-300 group-hover:shadow-[0_16px_40px_rgba(15,15,20,0.08)] group-hover:ring-ana-line">
           {project.imageUrl ? (
-            <Image src={project.imageUrl} alt="" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
+            <Image src={project.imageUrl} alt="" fill className="object-cover transition duration-300 group-hover:scale-[1.02]" sizes="(max-width: 768px) 100vw, 33vw" />
           ) : (
-            <div className="absolute inset-0 bg-gradient-to-br from-ana-accent/20 via-ana-canvas2 to-ana-surface" />
+            <div
+              className="absolute inset-0 bg-gradient-to-br from-ana-accent/15 via-ana-canvas2 to-white"
+              style={{
+                backgroundImage: `linear-gradient(135deg, rgba(151,71,255,0.12) 0%, rgba(247,244,239,0.9) 50%, #fff 100%)`,
+              }}
+            />
           )}
         </div>
 
-        <div className="mt-6 flex flex-1 flex-col">
-          <div className="flex flex-wrap items-baseline justify-between gap-2">
-            <h3 className="text-xl font-bold tracking-tight text-ana-ink md:text-2xl">{project.title}</h3>
-            {href ? (
-              <span className="text-sm font-semibold text-ana-accent underline-offset-4 group-hover:underline">
-                {inferLinkLabel(project)}
-              </span>
-            ) : (
-              <span className="text-sm font-semibold capitalize text-ana-muted">{inferLinkLabel(project)}</span>
-            )}
+        <div className="mt-5">
+          <div className="flex flex-wrap items-center gap-2 gap-y-1">
+            <h3 className="text-lg font-bold tracking-tight text-ana-ink">{project.title}</h3>
+            <LinkPill label={inferLinkLabel(project)} hasLink={!!href} />
           </div>
-          <p className="mt-3 text-base leading-relaxed text-ana-muted/90">{project.description}</p>
-          {meta ? (
-            <p className="mt-4 text-sm font-semibold text-ana-ink">
-              {project.client}
-              {project.client && project.year ? <span className="font-normal text-ana-muted"> · </span> : null}
-              {project.year ? <span className="font-normal text-ana-muted">{project.year}</span> : null}
-            </p>
-          ) : null}
+          <p className="mt-2 text-sm leading-relaxed text-ana-muted">{project.description}</p>
+          {meta ? <p className="mt-3 text-xs font-medium text-ana-muted">{meta}</p> : null}
         </div>
       </button>
     </motion.article>
@@ -116,8 +111,8 @@ function ProjectOverlay({ project, onClose, reduce }: { project: Project; onClos
           Close
         </button>
 
-        <p className="text-sm font-semibold capitalize text-ana-accent">{inferLinkLabel(project)}</p>
-        <h2 className="mt-2 pr-16 text-2xl font-bold text-ana-ink">{project.title}</h2>
+        <LinkPill label={inferLinkLabel(project)} hasLink={!!href} />
+        <h2 className="mt-3 pr-14 text-2xl font-bold text-ana-ink">{project.title}</h2>
         <p className="mt-4 text-sm leading-relaxed text-ana-muted">{project.description}</p>
         <p className="mt-3 text-sm text-ana-muted">
           <span className="font-semibold text-ana-ink">Role:</span> {project.role}
@@ -166,15 +161,16 @@ export function AnabolioProjects({ sectionTitle, items }: Props) {
     };
   }, [selected, close]);
 
-  const sorted = [...items].sort((a, b) => Number(b.featured) - Number(a.featured));
+  const featured = [...items].filter((p) => p.featured).slice(0, 6);
+  const rest = featured.length ? featured : items.slice(0, 6);
 
   return (
-    <section id="work" className="scroll-mt-24 border-t border-ana-line/50 py-12 md:py-20">
+    <section id="work" className="scroll-mt-24 py-12 md:py-16">
       <div className="mx-auto max-w-6xl px-5 md:px-8">
-        <h2 className="text-sm font-bold uppercase tracking-[0.2em] text-ana-muted">{sectionTitle}</h2>
+        <h2 className="text-xl font-bold tracking-tight text-ana-ink md:text-2xl">{sectionTitle}</h2>
 
-        <div className="mt-10 grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-x-6 md:gap-y-14">
-          {sorted.map((p) => (
+        <div className="mt-8 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-6 lg:gap-y-12">
+          {rest.map((p) => (
             <ProjectCard key={p.id} project={p} onSelect={() => setSelected(p)} reduce={!!reduce} />
           ))}
         </div>
