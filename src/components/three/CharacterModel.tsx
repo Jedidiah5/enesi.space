@@ -2,7 +2,7 @@
 
 import { Center, useAnimations, useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
-import { useEffect, useLayoutEffect, useMemo, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
 import * as THREE from "three";
 
 type Props = {
@@ -15,19 +15,18 @@ const TARGET_HEIGHT = 2.15;
 export function CharacterModel({ url, autoRotate = false }: Props) {
   const group = useRef<THREE.Group>(null);
   const { scene, animations } = useGLTF(url);
-  const model = useMemo(() => scene.clone(true), [scene]);
   const { actions } = useAnimations(animations, group);
 
   useLayoutEffect(() => {
-    const box = new THREE.Box3().setFromObject(model);
+    const box = new THREE.Box3().setFromObject(scene);
     const size = box.getSize(new THREE.Vector3());
     const maxDim = Math.max(size.x, size.y, size.z, 0.001);
     const scale = TARGET_HEIGHT / maxDim;
-    model.scale.setScalar(scale);
-    box.setFromObject(model);
+    scene.scale.setScalar(scale);
+    box.setFromObject(scene);
     const center = box.getCenter(new THREE.Vector3());
-    model.position.sub(center);
-  }, [model]);
+    scene.position.sub(center);
+  }, [scene]);
 
   useEffect(() => {
     if (animations.length === 0) return;
@@ -48,7 +47,7 @@ export function CharacterModel({ url, autoRotate = false }: Props) {
   return (
     <Center>
       <group ref={group}>
-        <primitive object={model} />
+        <primitive object={scene} />
       </group>
     </Center>
   );

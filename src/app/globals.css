@@ -7,7 +7,16 @@ html {
 }
 
 body {
-  @apply min-h-dvh bg-bento-canvas text-[15px] leading-relaxed text-bento-ink antialiased;
+  @apply min-h-dvh text-[15px] leading-relaxed antialiased;
+}
+
+.ana-canvas {
+  @apply bg-ana-canvas font-body text-ana-ink;
+  background-image: radial-gradient(ellipse 90% 60% at 50% -10%, rgba(151, 71, 255, 0.06), transparent 55%);
+}
+
+.ana-canvas ::selection {
+  @apply bg-ana-accent/25 text-ana-ink;
 }
 
 .bento-canvas {

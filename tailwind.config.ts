@@ -9,6 +9,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        ana: {
+          canvas: "#f7f4ef",
+          canvas2: "#efeae3",
+          surface: "#ffffff",
+          ink: "#0f0f12",
+          muted: "rgba(15, 15, 18, 0.55)",
+          line: "rgba(15, 15, 18, 0.12)",
+          accent: "#9747ff",
+          accentSoft: "#ede4ff",
+        },
         bento: {
           canvas: "#09090b",
           canvas2: "#0c0c0e",
@@ -43,7 +53,9 @@ const config: Config = {
       fontFamily: {
         sans: ["Tahoma", "Segoe UI", "MS Sans Serif", "sans-serif"],
         win: ["Tahoma", "Segoe UI", "MS Sans Serif", "sans-serif"],
-        bento: ["var(--font-bento)", "system-ui", "sans-serif"],
+        body: ["var(--font-body)", "Manrope", "system-ui", "sans-serif"],
+        display: ["var(--font-display)", "Rubik Bubbles", "cursive"],
+        bento: ["var(--font-body)", "system-ui", "sans-serif"],
       },
       boxShadow: {
         bento: "0 1px 0 rgba(255,255,255,0.04) inset, 0 8px 32px rgba(0,0,0,0.45)",

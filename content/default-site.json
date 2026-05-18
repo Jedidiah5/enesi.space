@@ -7,6 +7,11 @@
     "greeting": "Hi, I'm",
     "name": "Jedidiah Onotu",
     "roleLine": "Full-stack developer · London, UK",
+    "displayLines": ["Full-stack", "Web", "Developer"],
+    "introHeading": "Hey, guess who? 👋",
+    "footerRoleLine": "Full-stack developer",
+    "footerNote": "This portfolio is a work in progress — more case studies and visuals coming soon. Made with care and late-night commits 🌙",
+    "disclaimer": "Projects and brands shown are for portfolio demonstration only and do not imply ongoing affiliation unless stated.",
     "bio": "BSc Information Technology @ Middlesex University — graduating soon. I design and build web applications end to end: APIs, databases, and interfaces that are fast, accessible, and maintainable.",
     "ctaPrimary": "Let's Work Together",
     "ctaSecondary": "View Resume",
@@ -73,6 +78,10 @@
         "outcome": "A living portfolio that matches my current role: full-stack developer in London, finishing a BSc in IT at Middlesex.",
         "codeUrl": "https://github.com/Jedidiah5/Enesi-s-Space.github.io",
         "liveUrl": "https://enesi-s-space-github-io.vercel.app/",
+        "linkLabel": "visit website",
+        "client": "Personal",
+        "year": "2025",
+        "gridSize": "lg",
         "featured": true
       },
       {
@@ -85,6 +94,10 @@
         "outcome": "Replace this card with your repo, demo link, and screenshot when ready.",
         "codeUrl": "",
         "liveUrl": "",
+        "linkLabel": "case study",
+        "client": "Side project",
+        "year": "2025",
+        "gridSize": "md",
         "featured": true
       },
       {
@@ -97,6 +110,10 @@
         "outcome": "Update with your actual module title, stack, and outcomes.",
         "codeUrl": "",
         "liveUrl": "",
+        "linkLabel": "case study",
+        "client": "Middlesex University",
+        "year": "2025",
+        "gridSize": "md",
         "featured": false
       },
       {
@@ -109,6 +126,10 @@
         "outcome": "Swap in a real case study and a link to the live or repo.",
         "codeUrl": "",
         "liveUrl": "",
+        "linkLabel": "shipped",
+        "client": "Side project",
+        "year": "2024",
+        "gridSize": "sm",
         "featured": false
       }
     ]

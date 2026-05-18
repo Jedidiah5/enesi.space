@@ -3,6 +3,10 @@ export type Skill = {
   level?: number;
 };
 
+export type ProjectLinkLabel = "case study" | "visit website" | "shipped" | string;
+
+export type ProjectGridSize = "sm" | "md" | "lg";
+
 export type Project = {
   id: string;
   title: string;
@@ -14,6 +18,12 @@ export type Project = {
   codeUrl?: string;
   liveUrl?: string;
   featured?: boolean;
+  /** e.g. "Case study", "visit website", "shipped" */
+  linkLabel?: ProjectLinkLabel;
+  client?: string;
+  year?: string;
+  imageUrl?: string;
+  gridSize?: ProjectGridSize;
 };
 
 export type SiteContent = {
@@ -30,6 +40,12 @@ export type SiteContent = {
     ctaSecondary: string;
     resumeUrl?: string;
     stats: { label: string; value: string }[];
+    /** Large display lines, e.g. ["UI &", "UX", "Designer"] */
+    displayLines?: string[];
+    introHeading?: string;
+    footerRoleLine?: string;
+    footerNote?: string;
+    disclaimer?: string;
   };
   about: {
     title: string;

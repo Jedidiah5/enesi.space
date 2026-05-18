@@ -1,11 +1,18 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { Manrope, Rubik_Bubbles } from "next/font/google";
 import "./globals.css";
 import { getSiteContent } from "@/lib/content/get-content";
 
-const fontBento = Plus_Jakarta_Sans({
+const fontBody = Manrope({
   subsets: ["latin"],
-  variable: "--font-bento",
+  variable: "--font-body",
+  display: "swap",
+});
+
+const fontDisplay = Rubik_Bubbles({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-display",
   display: "swap",
 });
 
@@ -19,8 +26,8 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={fontBento.variable}>
-      <body className="min-h-dvh font-bento antialiased">{children}</body>
+    <html lang="en" className={`${fontBody.variable} ${fontDisplay.variable}`}>
+      <body className="min-h-dvh font-body antialiased">{children}</body>
     </html>
   );
 }
