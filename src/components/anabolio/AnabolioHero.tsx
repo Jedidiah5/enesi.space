@@ -1,8 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { HERO_STICKERS, PixelSticker } from "./PixelSticker";
+import { ProfileAvatar } from "./ProfileAvatar";
 import { SocialIcons } from "./SocialIcons";
 
 type Social = { label: string; href: string };
@@ -17,32 +17,6 @@ type Props = {
   socials: Social[];
   email?: string;
 };
-
-function ProfileAvatar({ name, src }: { name: string; src?: string }) {
-  const initials = name
-    .split(/\s+/)
-    .map((p) => p[0])
-    .join("")
-    .slice(0, 2)
-    .toUpperCase();
-
-  if (src) {
-    return (
-      <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-xl bg-ana-canvas2 ring-1 ring-ana-line md:h-16 md:w-16">
-        <Image src={src} alt="" fill className="object-cover" sizes="64px" />
-      </div>
-    );
-  }
-
-  return (
-    <div
-      className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-ana-accent/30 to-ana-accentSoft text-sm font-bold text-ana-ink ring-1 ring-ana-line md:h-16 md:w-16"
-      aria-hidden
-    >
-      {initials}
-    </div>
-  );
-}
 
 export function AnabolioHero({
   helloHeadline,

@@ -50,6 +50,9 @@ export type SiteContent = {
     introHeading?: string;
     footerRoleLine?: string;
     footerNote?: string;
+    footerStatusLead?: string;
+    footerStatusTrail?: string;
+    footerSignoff?: string;
     disclaimer?: string;
   };
   about: {

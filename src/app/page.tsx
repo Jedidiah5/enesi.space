@@ -37,9 +37,13 @@ export default async function Home() {
       <AnabolioFooter
         name={c.hero.name}
         roleLine={c.hero.footerRoleLine ?? c.hero.roleLine}
-        note={c.hero.footerNote}
+        profileImageUrl={c.hero.profileImageUrl || undefined}
+        statusLead={c.hero.footerStatusLead}
+        statusTrail={c.hero.footerStatusTrail}
+        signoff={c.hero.footerSignoff ?? c.hero.footerNote}
         disclaimer={c.hero.disclaimer}
         socials={c.contact.socials}
+        email={c.contact.email}
       />
     </div>
   );

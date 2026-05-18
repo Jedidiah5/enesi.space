@@ -3,6 +3,7 @@ type Social = { label: string; href: string };
 type Props = {
   socials: Social[];
   email?: string;
+  className?: string;
 };
 
 function IconSmile() {
@@ -50,11 +51,11 @@ function iconFor(label: string) {
   return null;
 }
 
-export function SocialIcons({ socials, email }: Props) {
+export function SocialIcons({ socials, email, className = "" }: Props) {
   const withHref = socials.filter((s) => s.href);
 
   return (
-    <div className="flex items-center gap-4 text-ana-ink/70">
+    <div className={`flex items-center gap-4 text-ana-ink/50 ${className}`.trim()}>
       {email ? (
         <a href={`mailto:${email}`} className="transition hover:text-ana-ink" aria-label="Email">
           <IconSmile />

@@ -18,6 +18,8 @@ const config: Config = {
           line: "rgba(15, 15, 18, 0.12)",
           accent: "#9747ff",
           accentSoft: "#ede4ff",
+          pink: "#f2a1c2",
+          violet: "#8b5cf6",
         },
         bento: {
           canvas: "#09090b",
