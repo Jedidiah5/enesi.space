@@ -30,7 +30,7 @@ export function AnabolioFooter({
   const signoffLine = signoff ?? "Made with love and late-night sessions 🌝";
 
   return (
-    <footer className="border-t border-ana-line/40 bg-[#f9f9f9] py-14 md:py-20">
+    <footer className="border-t border-ana-line/50 bg-ana-canvas2/80 py-14 md:py-20">
       <div className="mx-auto max-w-6xl px-5 md:px-8">
         <div className="flex flex-col items-center text-center">
           <div className="flex items-center gap-3">
@@ -43,7 +43,7 @@ export function AnabolioFooter({
 
           <p className="mt-8 max-w-lg text-[15px] leading-relaxed md:max-w-xl md:text-base">
             <span className="text-ana-pink">{lead}</span>{" "}
-            <span className="font-medium text-ana-violet">{trail}</span>
+            <span className="font-medium text-ana-accent">{trail}</span>
           </p>
 
           <p className="mt-3 text-[15px] text-ana-ink md:text-base">{signoffLine}</p>

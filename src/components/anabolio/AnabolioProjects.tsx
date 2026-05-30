@@ -24,7 +24,7 @@ function inferLinkLabel(p: Project): string {
 function LinkPill({ label, hasLink }: { label: string; hasLink: boolean }) {
   const text = label.toUpperCase();
   return (
-    <span className="inline-flex items-center gap-0.5 rounded-md border border-ana-line bg-white px-2 py-0.5 text-[10px] font-bold tracking-wide text-ana-muted">
+    <span className="inline-flex items-center gap-0.5 rounded-md border border-ana-line bg-ana-surface px-2 py-0.5 text-[10px] font-bold tracking-wide text-ana-muted">
       {text}
       {hasLink ? <span aria-hidden>↗</span> : null}
     </span>
@@ -56,16 +56,11 @@ function ProjectCard({
         onClick={onSelect}
         className="flex w-full flex-col text-left outline-none focus-visible:ring-2 focus-visible:ring-ana-accent focus-visible:ring-offset-2 focus-visible:ring-offset-ana-canvas"
       >
-        <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-ana-surface ring-1 ring-ana-line/70 transition duration-300 group-hover:shadow-[0_16px_40px_rgba(15,15,20,0.08)] group-hover:ring-ana-line">
+        <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-ana-surface ring-1 ring-ana-line transition duration-300 group-hover:shadow-[0_16px_48px_rgba(0,0,0,0.45)] group-hover:ring-ana-accent/30">
           {project.imageUrl ? (
             <Image src={project.imageUrl} alt="" fill className="object-cover transition duration-300 group-hover:scale-[1.02]" sizes="(max-width: 768px) 100vw, 33vw" />
           ) : (
-            <div
-              className="absolute inset-0 bg-gradient-to-br from-ana-accent/15 via-ana-canvas2 to-white"
-              style={{
-                backgroundImage: `linear-gradient(135deg, rgba(151,71,255,0.12) 0%, rgba(247,244,239,0.9) 50%, #fff 100%)`,
-              }}
-            />
+            <div className="absolute inset-0 bg-gradient-to-br from-ana-accent/25 via-ana-canvas2 to-ana-surface" />
           )}
         </div>
 
@@ -97,7 +92,7 @@ function ProjectOverlay({ project, onClose, reduce }: { project: Project; onClos
       <motion.article
         role="dialog"
         aria-modal="true"
-        className="relative z-10 max-h-[min(90vh,720px)] w-full max-w-xl overflow-y-auto rounded-3xl bg-white p-6 shadow-2xl sm:p-8"
+        className="relative z-10 max-h-[min(90vh,720px)] w-full max-w-xl overflow-y-auto rounded-3xl border border-ana-line bg-ana-surface p-6 shadow-2xl sm:p-8"
         initial={reduce ? { opacity: 0 } : { opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: 16 }}

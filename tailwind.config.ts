@@ -10,16 +10,16 @@ const config: Config = {
     extend: {
       colors: {
         ana: {
-          canvas: "#f7f4ef",
-          canvas2: "#efeae3",
-          surface: "#ffffff",
-          ink: "#0f0f12",
-          muted: "rgba(15, 15, 18, 0.55)",
-          line: "rgba(15, 15, 18, 0.12)",
-          accent: "#9747ff",
-          accentSoft: "#ede4ff",
-          pink: "#f2a1c2",
-          violet: "#8b5cf6",
+          canvas: "#09090b",
+          canvas2: "#141416",
+          surface: "#18181b",
+          ink: "#f4f4f5",
+          muted: "#a1a1aa",
+          line: "rgba(255, 255, 255, 0.1)",
+          accent: "#c45c3e",
+          accentSoft: "#2a1814",
+          pink: "#e8917a",
+          violet: "#e07a54",
         },
         bento: {
           canvas: "#09090b",

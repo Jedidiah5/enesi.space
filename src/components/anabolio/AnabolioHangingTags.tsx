@@ -54,7 +54,7 @@ export function AnabolioHangingTags({ links, className = "" }: Props) {
               transition={{ ...springDrop, delay: 0.12 + i * 0.1 }}
             >
               <motion.div
-                className="relative w-full rounded-xl border border-ana-line bg-white px-2 py-2 text-center shadow-[0_8px_24px_rgba(15,15,20,0.08)]"
+                className="relative w-full rounded-xl border border-ana-line bg-ana-surface/90 px-2 py-2 text-center shadow-[0_8px_24px_rgba(0,0,0,0.35)] backdrop-blur-sm"
                 style={{ rotate: `${tilt}deg` }}
                 animate={
                   reduce

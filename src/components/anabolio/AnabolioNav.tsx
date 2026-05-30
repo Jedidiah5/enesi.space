@@ -19,7 +19,7 @@ export function AnabolioNav({ siteName, active: activeProp }: Props) {
   const active = activeProp ?? (pathname === "/about" ? "about" : "work");
 
   return (
-    <header className="sticky top-0 z-50 bg-ana-canvas/95 backdrop-blur-sm">
+    <header className="sticky top-0 z-50 border-b border-ana-line/60 bg-ana-canvas/90 backdrop-blur-md">
       <div className="mx-auto grid max-w-6xl grid-cols-[1fr_auto_1fr] items-center gap-4 px-5 py-5 md:px-8">
         <Link href="/" className="flex items-center gap-2.5 justify-self-start">
           <PixelSticker variant="logo" size={28} />
@@ -27,7 +27,7 @@ export function AnabolioNav({ siteName, active: activeProp }: Props) {
         </Link>
 
         <nav
-          className="flex items-center rounded-full border border-ana-line bg-white p-1 shadow-[0_1px_3px_rgba(15,15,20,0.06)]"
+          className="flex items-center rounded-full border border-ana-line bg-ana-surface/90 p-1 shadow-[0_4px_24px_rgba(0,0,0,0.35)]"
           aria-label="Primary"
         >
           {links.map((item) => {
@@ -38,7 +38,7 @@ export function AnabolioNav({ siteName, active: activeProp }: Props) {
                 href={item.href}
                 className={[
                   "rounded-full px-5 py-2 text-sm font-semibold transition",
-                  isActive ? "bg-ana-canvas2 text-ana-ink" : "text-ana-muted hover:text-ana-ink",
+                  isActive ? "bg-ana-accent/20 text-ana-accent" : "text-ana-muted hover:text-ana-ink",
                 ].join(" ")}
               >
                 {item.label}

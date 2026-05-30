@@ -2,10 +2,10 @@ import Link from "next/link";
 import type { AboutSocialStat } from "@/types/content";
 
 const toneClass: Record<AboutSocialStat["badgeTone"], string> = {
-  green: "bg-[#d4f0df] text-[#1a6b3c]",
-  orange: "bg-[#ffe4cc] text-[#b45309]",
-  grey: "bg-[#e8e8ea] text-[#52525b]",
-  pink: "bg-[#fce4ef] text-[#be185d]",
+  green: "bg-ana-accentSoft text-ana-accent",
+  orange: "bg-ana-accent/25 text-ana-accent",
+  grey: "bg-white/10 text-ana-muted",
+  pink: "bg-ana-accent/15 text-ana-violet",
 };
 
 type Props = {

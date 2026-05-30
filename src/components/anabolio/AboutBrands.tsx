@@ -18,7 +18,7 @@ export function AboutBrands({ title, brands }: Props) {
           {brands.map((brand) => (
             <div
               key={brand.name}
-              className="flex h-10 min-w-[4.5rem] items-center justify-center grayscale opacity-50 transition hover:opacity-80"
+              className="flex h-10 min-w-[4.5rem] items-center justify-center opacity-40 transition hover:text-ana-accent hover:opacity-90"
             >
               {brand.logoUrl ? (
                 <Image src={brand.logoUrl} alt={brand.name} width={100} height={40} className="h-8 w-auto object-contain" />

@@ -31,15 +31,15 @@ export function AboutHero({ imageUrl, name, phonetic, bio }: Props) {
           {imageUrl ? (
             <Image src={imageUrl} alt="" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" priority />
           ) : (
-            <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-ana-accent/15 via-ana-canvas2 to-white">
-              <span className="font-display text-5xl text-ana-accent/40">{initials}</span>
+            <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-ana-accent/20 via-ana-canvas2 to-ana-surface">
+              <span className="text-5xl font-bold text-ana-accent/50">{initials}</span>
             </div>
           )}
         </motion.div>
 
         <div className="flex flex-col justify-center md:pl-2 lg:pl-6">
           <motion.div
-            className="mb-4 h-10 w-1 rounded-full bg-ana-ink"
+            className="mb-4 h-10 w-1 rounded-full bg-ana-accent"
             initial={reduce ? false : { scaleY: 0 }}
             animate={{ scaleY: 1 }}
             transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}

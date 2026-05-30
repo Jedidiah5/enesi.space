@@ -55,9 +55,9 @@ export function SocialIcons({ socials, email, className = "" }: Props) {
   const withHref = socials.filter((s) => s.href);
 
   return (
-    <div className={`flex items-center gap-4 text-ana-ink/50 ${className}`.trim()}>
+    <div className={`flex items-center gap-4 text-ana-muted ${className}`.trim()}>
       {email ? (
-        <a href={`mailto:${email}`} className="transition hover:text-ana-ink" aria-label="Email">
+        <a href={`mailto:${email}`} className="transition hover:text-ana-accent" aria-label="Email">
           <IconSmile />
         </a>
       ) : (
@@ -73,7 +73,7 @@ export function SocialIcons({ socials, email, className = "" }: Props) {
             href={s.href}
             target="_blank"
             rel="noreferrer"
-            className="transition hover:text-ana-ink"
+            className="transition hover:text-ana-accent"
             aria-label={s.label}
           >
             {Icon ? <Icon /> : <span className="text-xs font-semibold">{s.label}</span>}
