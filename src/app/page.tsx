@@ -1,50 +1,53 @@
-import { AnabolioFooter } from "@/components/anabolio/AnabolioFooter";
-import { AnabolioHero } from "@/components/anabolio/AnabolioHero";
-import { AnabolioNav } from "@/components/anabolio/AnabolioNav";
-import { AnabolioProjects } from "@/components/anabolio/AnabolioProjects";
+import { ArsenalSection } from "@/components/times/ArsenalSection";
+import { ContactFooter } from "@/components/times/ContactFooter";
+import { HeroSection } from "@/components/times/HeroSection";
+import { NoiseOverlay } from "@/components/times/NoiseOverlay";
+import { ProjectsSection } from "@/components/times/ProjectsSection";
+import { Sidebar } from "@/components/times/Sidebar";
+import { TopNav } from "@/components/times/TopNav";
 import { getSiteContent } from "@/lib/content/get-content";
 
-function helloHeadline(hero: Awaited<ReturnType<typeof getSiteContent>>["hero"]) {
-  if (hero.helloHeadline) return hero.helloHeadline;
-  const first = hero.name.split(/\s+/)[0] || hero.name;
-  return `I'm ${first}, hello!`;
+function skillsToArsenal(skills: { name: string }[]) {
+  const tags = ["FRONTEND", "LOGIC", "STYLE", "AI", "AUTH", "DATA"];
+  return skills.slice(0, 6).map((s, i) => ({
+    tag: tags[i] ?? "TOOL",
+    label: s.name.toUpperCase(),
+    accent: i >= 3,
+  }));
 }
 
-function roleSubtitle(hero: Awaited<ReturnType<typeof getSiteContent>>["hero"]) {
-  if (hero.roleSubtitle) return hero.roleSubtitle;
-  return hero.roleLine.split("·")[0]?.trim() || hero.roleLine;
+function tickerFromContent(c: Awaited<ReturnType<typeof getSiteContent>>) {
+  const role = c.hero.roleLine.split("·")[0]?.trim().toUpperCase() ?? "FULL STACK DEVELOPER";
+  return [
+    role,
+    "LONDON",
+    ...c.skills.slice(0, 5).map((s) => s.name.toUpperCase()),
+    `${c.hero.stats[1]?.value ?? "15+"} PROJECTS`,
+  ];
 }
 
 export default async function Home() {
   const c = await getSiteContent();
+  const bio = c.about.bioLong ?? c.about.paragraphs.join(" ");
+  const quote =
+    c.about.focus[0]?.body ??
+    "The best interfaces are those that tell a story before they perform a function.";
 
   return (
-    <div className="ana-canvas min-h-dvh">
-      <AnabolioNav siteName={c.hero.name} />
-      <main>
-        <AnabolioHero
-          name={c.hero.name}
-          helloHeadline={helloHeadline(c.hero)}
-          roleSubtitle={roleSubtitle(c.hero)}
-          introHeading={c.hero.introHeading ?? "Hey, guess who? 👋"}
-          bio={c.hero.bio}
-          profileImageUrl={c.hero.profileImageUrl || undefined}
-          socials={c.contact.socials}
+    <>
+      <NoiseOverlay />
+      <TopNav email={c.contact.email} />
+      <Sidebar email={c.contact.email} />
+      <main className="relative lg:ml-64">
+        <HeroSection bio={bio} quote={quote} tickerItems={tickerFromContent(c)} />
+        <ProjectsSection items={c.projects.items} />
+        <ArsenalSection skills={skillsToArsenal(c.skills)} quote={quote} />
+        <ContactFooter
           email={c.contact.email}
+          locationLine={c.contact.locationLine}
+          socials={c.contact.socials}
         />
-        <AnabolioProjects sectionTitle={c.projects.sectionTitle} items={c.projects.items} />
       </main>
-      <AnabolioFooter
-        name={c.hero.name}
-        roleLine={c.hero.footerRoleLine ?? c.hero.roleLine}
-        profileImageUrl={c.hero.profileImageUrl || undefined}
-        statusLead={c.hero.footerStatusLead}
-        statusTrail={c.hero.footerStatusTrail}
-        signoff={c.hero.footerSignoff ?? c.hero.footerNote}
-        disclaimer={c.hero.disclaimer}
-        socials={c.contact.socials}
-        email={c.contact.email}
-      />
-    </div>
+    </>
   );
 }
