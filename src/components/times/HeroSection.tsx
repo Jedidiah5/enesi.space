@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Ticker } from "./Ticker";
 
 type TechSpec = { pantone: string; color: string; label: string };
@@ -48,10 +49,16 @@ export function HeroSection({ bio, quote, tickerItems, techSpecs = defaultSpecs 
             </span>
           </h1>
 
-          <div
-            className="relative z-20 w-full max-w-md aspect-[4/5] min-h-[280px]"
-            aria-hidden
-          />
+          <div className="relative z-20 w-full max-w-md aspect-[4/5] min-h-[280px]">
+            <Image
+              src="/images/hero-character.png"
+              alt="Enesi pixel character"
+              fill
+              className="pixelated object-contain object-bottom"
+              sizes="(max-width: 768px) 100vw, 28rem"
+              priority
+            />
+          </div>
         </div>
 
         {/* Tech specs */}
