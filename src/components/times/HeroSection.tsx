@@ -1,7 +1,3 @@
-"use client";
-
-import { motion, useReducedMotion } from "framer-motion";
-import { TIMES_ASSETS } from "./assets";
 import { Ticker } from "./Ticker";
 
 type TechSpec = { pantone: string; color: string; label: string };
@@ -19,7 +15,6 @@ const defaultSpecs: TechSpec[] = [
 ];
 
 export function HeroSection({ bio, quote, tickerItems, techSpecs = defaultSpecs }: Props) {
-  const reduce = useReducedMotion();
   const firstLetter = bio.trim()[0]?.toUpperCase() ?? "E";
   const restBio = bio.trim().slice(1);
 
@@ -53,23 +48,10 @@ export function HeroSection({ bio, quote, tickerItems, techSpecs = defaultSpecs 
             </span>
           </h1>
 
-          <motion.div
-            className="relative z-20 -rotate-2 bg-white p-4 scribble-border"
-            initial={reduce ? false : { opacity: 0, y: 24, scale: 0.96 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ type: "spring", damping: 25, stiffness: 250 }}
-            whileHover={reduce ? undefined : { rotate: 0, transition: { type: "spring", damping: 20, stiffness: 300 } }}
-          >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              alt="Pixel character"
-              src={TIMES_ASSETS.heroCharacter}
-              className="pixelated h-auto w-full contrast-125 drop-shadow-2xl"
-            />
-            <div className="absolute -bottom-4 -right-4 rotate-6 bg-primary px-3 py-1 font-label-mono text-xs text-on-primary">
-              NEW ISSUE #{String(new Date().getFullYear()).slice(-2)}
-            </div>
-          </motion.div>
+          <div
+            className="relative z-20 w-full max-w-md aspect-[4/5] min-h-[280px]"
+            aria-hidden
+          />
         </div>
 
         {/* Tech specs */}
