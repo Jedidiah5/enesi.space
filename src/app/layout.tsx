@@ -1,12 +1,17 @@
 import type { Metadata } from "next";
-import { Bricolage_Grotesque, Merriweather, Playfair_Display, Space_Mono } from "next/font/google";
+import localFont from "next/font/local";
+import { Merriweather, Space_Mono } from "next/font/google";
 import "./globals.css";
 import { getSiteContent } from "@/lib/content/get-content";
 
-const fontMasthead = Playfair_Display({
-  subsets: ["latin"],
-  weight: "900",
-  variable: "--font-masthead",
+/** Large display type — Fibre Vintage from src/font */
+const fontDisplay = localFont({
+  src: [
+    { path: "../font/FibreVintage.woff2", weight: "700", style: "normal" },
+    { path: "../font/FibreVintage.woff", weight: "700", style: "normal" },
+    { path: "../font/FibreVintage.ttf", weight: "700", style: "normal" },
+  ],
+  variable: "--font-display",
   display: "swap",
 });
 
@@ -25,13 +30,6 @@ const fontLabelMono = Space_Mono({
   display: "swap",
 });
 
-const fontSectionHeader = Bricolage_Grotesque({
-  subsets: ["latin"],
-  weight: "800",
-  variable: "--font-section-header",
-  display: "swap",
-});
-
 export async function generateMetadata(): Promise<Metadata> {
   const c = await getSiteContent();
   return {
@@ -44,7 +42,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="en"
-      className={`${fontMasthead.variable} ${fontBodyMain.variable} ${fontLabelMono.variable} ${fontSectionHeader.variable}`}
+      className={`${fontDisplay.variable} ${fontBodyMain.variable} ${fontLabelMono.variable}`}
     >
       <head>
         <link

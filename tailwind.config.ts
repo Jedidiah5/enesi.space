@@ -99,10 +99,10 @@ const config: Config = {
         "margin-page": "40px",
       },
       fontFamily: {
-        masthead: ["var(--font-masthead)", "Playfair Display", "serif"],
+        masthead: ["var(--font-display)", "Fibre Vintage", "serif"],
         "body-main": ["var(--font-body-main)", "Merriweather", "serif"],
         "label-mono": ["var(--font-label-mono)", "Space Mono", "monospace"],
-        "section-header": ["var(--font-section-header)", "Bricolage Grotesque", "sans-serif"],
+        "section-header": ["var(--font-display)", "Fibre Vintage", "serif"],
         "caption-typewriter": ["var(--font-label-mono)", "Space Mono", "monospace"],
         sans: ["Tahoma", "Segoe UI", "MS Sans Serif", "sans-serif"],
         win: ["Tahoma", "Segoe UI", "MS Sans Serif", "sans-serif"],
