@@ -18,8 +18,8 @@
     "disclaimer": "The designs showcased on this site are shared solely for portfolio purposes and do not imply ownership or ongoing affiliation with the brands or companies represented. 💪",
     "bio": "BSc Information Technology @ Middlesex University — graduating soon. I design and build web applications end to end: APIs, databases, and interfaces that are fast, accessible, and maintainable.",
     "ctaPrimary": "Let's Work Together",
-    "ctaSecondary": "View Resume",
-    "resumeUrl": "",
+    "ctaSecondary": "View CV",
+    "resumeUrl": "/Jedidiah_Onotu_CV.pdf",
     "stats": [
       { "label": "Years Experience", "value": "2+" },
       { "label": "Projects Completed", "value": "15+" },
