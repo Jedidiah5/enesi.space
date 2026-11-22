@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hayes Health Foods: Independent health store in Hayes</title>
+<meta name="description" content="A family-run health store on Uxbridge Road, stocking unique food supplements and bodybuilding products.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#F3F6EF">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');if(matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('rm');</script>
+<style>
+:root{--bg:#F3F6EF;--surface:#FFFFFF;--ink:#1F3320;--muted:#566655;--accent:#3F7F2B;--accent-ink:#FFFFFF;--glow:#F2C14E;--dark:#1F3320;--r:16px;
+--fd:"Outfit",system-ui,sans-serif;--fb:"Outfit",system-ui,sans-serif;--track:-.03em;--ease:cubic-bezier(.22,1,.36,1)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--fb);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.demo{background:var(--dark);color:#fff;font-size:13.5px;text-align:center;padding:9px 16px}
+.demo a{color:var(--glow);font-weight:600}
+header.top{position:sticky;top:0;z-index:20;transition:background .4s var(--ease),box-shadow .4s var(--ease),backdrop-filter .4s}
+header.top.scrolled{background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);box-shadow:0 1px 0 color-mix(in srgb,var(--ink) 8%,transparent)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:76px}
+.brand{display:flex;align-items:center;gap:12px;font-family:var(--fd);font-weight:700;font-size:20px;letter-spacing:var(--track);text-decoration:none}
+.brand .logo{width:44px;height:44px;border-radius:50%}
+nav.links{display:flex;gap:28px;font-size:15px;font-weight:500}
+nav.links a{text-decoration:none;color:var(--muted);position:relative}
+nav.links a::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:right;transition:transform .45s var(--ease)}
+nav.links a:hover{color:var(--ink)}
+nav.links a:hover::after{transform:scaleX(1);transform-origin:left}
+.btn{--y:0px;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:15px 24px;border-radius:999px;font-weight:700;font-size:15.5px;text-decoration:none;border:0;cursor:pointer;font-family:inherit;transform:translateY(var(--y));transition:transform .5s var(--ease),box-shadow .5s var(--ease),background .3s}
+.btn:hover{--y:-2px}
+.btn:active{--y:0px;transition-duration:.12s}
+.btn-solid{background:var(--accent);color:var(--accent-ink);box-shadow:0 10px 30px -12px var(--accent)}
+.btn-solid:hover{box-shadow:0 18px 40px -14px var(--accent)}
+.btn-line{box-shadow:inset 0 0 0 1.5px var(--ink);color:var(--ink);padding:12px 20px}
+.btn-line:hover{background:var(--ink);color:var(--bg)}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center;padding-block:56px 96px}
+.hero.stacked{grid-template-columns:1fr;gap:56px;padding-block-end:110px}
+.hero.stacked>div:first-child{display:grid;grid-template-columns:1.25fr .75fr;column-gap:64px;align-items:end}
+.hero.stacked h1{max-width:14ch;grid-column:1}
+.hero.stacked .kicker{grid-column:1/-1}
+.hero.stacked .sub{grid-column:2;grid-row:2;margin:0 0 10px}
+.hero.stacked .cta-row{grid-column:1;margin-top:36px}
+.hero.stacked .rating{grid-column:2;margin-top:36px;align-self:center}
+.hero.stacked .visual .clip{aspect-ratio:16/8}
+.hero.stacked .card{left:auto;right:32px;bottom:-56px;width:min(380px,calc(100% - 32px))}
+.kicker{display:inline-flex;align-items:center;gap:10px;color:var(--accent);font-weight:700;font-size:15px;margin-bottom:22px}
+.kicker::before{content:"";width:28px;height:2px;background:currentColor}
+h1{font-family:var(--fd);font-weight:700;font-size:clamp(44px,6.2vw,86px);line-height:1;letter-spacing:var(--track);max-width:12.5ch}
+.mask{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em;margin-bottom:-.08em}
+.mask>span{display:inline-block}
+.sub{font-size:clamp(18px,1.9vw,20px);color:var(--muted);max-width:48ch;margin:28px 0 36px}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.rating{margin-top:28px;font-size:15px;color:var(--muted);font-weight:500}
+.stars{color:var(--accent);letter-spacing:2px;margin-right:6px;filter:saturate(1.2)}
+.visual{position:relative;margin:0}
+.visual .clip{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:4/5;background:var(--surface)}
+.photo img{width:100%;height:112%;object-fit:cover;will-change:transform}
+.panel .clip{background:linear-gradient(155deg,var(--dark),color-mix(in srgb,var(--dark) 70%,var(--accent)))}
+.orb{position:absolute;width:120%;aspect-ratio:1;left:-10%;top:-30%;border-radius:50%;background:radial-gradient(circle at 50% 50%,var(--glow),transparent 62%);opacity:.55;will-change:transform}
+.tags{position:absolute;left:28px;right:28px;top:32px;list-style:none;display:flex;flex-wrap:wrap;gap:10px}
+.tags li{color:#fff;font-weight:600;font-size:15px;padding:9px 16px;border-radius:999px;background:rgba(255,255,255,.12);box-shadow:inset 0 0 0 1px rgba(255,255,255,.22);backdrop-filter:blur(6px)}
+.card{position:absolute;left:-28px;right:28px;bottom:28px;background:var(--surface);border-radius:calc(var(--r) * .8);padding:26px;box-shadow:0 30px 80px -30px rgba(0,0,0,.45)}
+.card-t{font-family:var(--fd);font-weight:700;font-size:22px;line-height:1.15;letter-spacing:var(--track)}
+.card-a{color:var(--muted);font-size:14.5px;margin:6px 0 14px}
+.card-l{display:grid;gap:2px;font-weight:600;margin-bottom:18px;font-size:15px;word-break:break-word}
+.card-l a{text-decoration:none}
+.card .btn{width:100%}
+.marquee{border-block:1px solid color-mix(in srgb,var(--ink) 10%,transparent);overflow:hidden;padding:22px 0;background:var(--surface)}
+.marquee .row{display:flex;gap:28px;width:max-content;font-family:var(--fd);font-weight:700;font-size:clamp(22px,2.6vw,32px);letter-spacing:var(--track);white-space:nowrap;animation:slide 38s linear infinite}
+.marquee .dot{color:var(--accent);font-size:.6em;align-self:center}
+@keyframes slide{to{transform:translateX(-50%)}}
+section{padding:112px 0}
+h2{font-family:var(--fd);font-weight:700;font-size:clamp(34px,4.2vw,54px);line-height:1.05;letter-spacing:var(--track);max-width:16ch;margin-bottom:52px}
+.services ul{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);column-gap:64px}
+.services li{position:relative;padding:30px 0 32px;border-top:1px solid color-mix(in srgb,var(--ink) 14%,transparent)}
+.services li::before{content:"";position:absolute;left:0;top:-1px;height:2px;width:100%;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .7s var(--ease)}
+.services li:hover::before{transform:scaleX(1)}
+.services h3{font-family:var(--fd);font-weight:700;letter-spacing:var(--track);font-size:24px;margin-bottom:8px;transition:transform .6s var(--ease)}
+.services li:hover h3{transform:translateX(6px)}
+.services p{color:var(--muted);max-width:44ch}
+.gallery{padding-top:0}
+.gallery .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.gallery.g1 .grid{grid-template-columns:minmax(0,560px)}
+.gallery figure .clip{border-radius:var(--r);overflow:hidden;aspect-ratio:4/3}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.gallery figure:hover img{transform:scale(1.04)}
+.gallery figcaption{margin-top:12px;font-size:14.5px;color:var(--muted)}
+.steps{background:var(--surface)}
+.track{position:relative}
+.track .line{position:absolute;left:22px;right:22px;top:22px;height:2px;background:var(--accent);transform-origin:left;opacity:.35}
+.steps ol{position:relative;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:32px}
+.steps .n{display:inline-grid;place-items:center;width:46px;height:46px;border-radius:50%;background:var(--accent);color:var(--accent-ink);font-weight:800;margin-bottom:22px;box-shadow:0 0 0 8px var(--surface)}
+.steps h3{font-family:var(--fd);font-weight:700;letter-spacing:var(--track);font-size:21px;margin-bottom:6px}
+.steps p{color:var(--muted)}
+.contact{background:var(--dark);color:#fff;border-radius:calc(var(--r) * 1.4) calc(var(--r) * 1.4) 0 0}
+.contact .grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
+.contact h2{color:#fff}
+.contact .lead{opacity:.8;max-width:40ch;margin:-28px 0 32px}
+.contact .lines{display:grid;gap:10px;font-size:clamp(19px,2vw,23px);font-weight:600}
+.contact .lines a{text-decoration:none;justify-self:start;background:linear-gradient(var(--glow),var(--glow)) 0 100%/100% 2px no-repeat;transition:background-size .5s var(--ease)}
+.contact .lines a:hover{background-size:0 2px;background-position:100% 100%}
+.contact .place{margin-top:22px;opacity:.75}
+.contact .social{display:flex;gap:18px;margin-top:18px;font-weight:600}
+form{display:grid;gap:16px;background:rgba(255,255,255,.06);padding:28px;border-radius:var(--r);box-shadow:inset 0 0 0 1px rgba(255,255,255,.1)}
+label{display:grid;gap:7px;font-size:14px;font-weight:600}
+input,textarea{font:inherit;padding:14px 16px;border-radius:calc(var(--r) * .6);border:0;background:rgba(255,255,255,.08);color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.16);transition:box-shadow .3s var(--ease),background .3s}
+input:focus,textarea:focus{outline:0;background:rgba(255,255,255,.12);box-shadow:inset 0 0 0 2px var(--glow)}
+textarea{min-height:130px;resize:vertical}
+form .btn{justify-self:start;margin-top:6px}
+footer{background:var(--dark);color:rgba(255,255,255,.6);font-size:14px;padding:28px 0 36px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;border-top:1px solid rgba(255,255,255,.1);padding-top:24px}
+footer a{color:#fff}
+/* motion start states: only when JS is on and motion is allowed */
+.js:not(.rm) [data-fade],.js:not(.rm) [data-item]{opacity:0}
+.js:not(.rm) .mask>span{transform:translateY(110%)}
+.js:not(.rm) [data-visual] .clip{clip-path:inset(12% 8% 12% 8% round var(--r))}
+.js:not(.rm) [data-card]{opacity:0}
+.js:not(.rm) [data-reveal-img] .clip{clip-path:inset(100% 0 0 0 round var(--r))}
+.js:not(.rm) [data-line]{transform:scaleX(0)}
+.js:not(.rm) header.top{opacity:0}
+.rm .marquee .row{animation:none}
+@media (max-width:900px){
+.hero.stacked>div:first-child{display:block}.hero.stacked .sub{margin:24px 0 32px}.hero.stacked .visual .clip{aspect-ratio:4/3.4}.hero.stacked .card{position:relative;right:auto;bottom:auto;width:auto;margin:-64px 16px 0}
+.hero{grid-template-columns:1fr;gap:44px;padding-block:24px 72px}
+.visual .clip{aspect-ratio:4/4.2}
+.card{position:relative;left:auto;right:auto;bottom:auto;margin:-72px 16px 0}
+nav.links{display:none}
+.services ul{grid-template-columns:1fr}
+.contact .grid{grid-template-columns:1fr;gap:44px}
+section{padding:80px 0}
+.track .line{display:none}
+}
+@media (max-width:520px){header.top .btn-line{display:none}h2{margin-bottom:36px}}
+</style>
+</head>
+<body>
+<div class="demo">Free concept site made for Hayes Health Foods by <a href="https://enesi.space">Jedidiah Onotu</a></div>
+<header class="top"><div class="wrap"><a class="brand" href="#"><span>Hayes Health Foods</span></a><nav class="links" aria-label="Page"><a href="#what">Services</a><a href="#contact">Contact</a></nav><a class="btn btn-line" href="tel:02085611625">Call 020 8561 1625</a></div></header>
+<main>
+<div class="wrap hero">
+<div>
+<p class="kicker" data-fade>Independent health store in Hayes</p>
+<h1 data-hero><span class="mask"><span class="w">Supplements</span></span> <span class="mask"><span class="w">and</span></span> <span class="mask"><span class="w">sports</span></span> <span class="mask"><span class="w">nutrition,</span></span> <span class="mask"><span class="w">with</span></span> <span class="mask"><span class="w">real</span></span> <span class="mask"><span class="w">advice.</span></span></h1>
+<p class="sub" data-fade>A family-run health store on Uxbridge Road, stocking unique food supplements and bodybuilding products.</p>
+<div class="cta-row" data-fade><a class="btn btn-solid" href="#contact">Ask about a product</a><a class="btn btn-line" href="tel:02085611625">Call 020 8561 1625</a></div>
+
+</div>
+<figure class="visual panel" data-visual>
+<div class="clip"><div class="orb" data-parallax></div><ul class="tags"><li>Food supplements</li><li>Sports nutrition</li><li>Hard-to-find products</li><li>Friendly advice</li></ul></div>
+<div class="card" data-card><p class="card-t">Hayes Health Foods</p><p class="card-a">594 Uxbridge Road, Hayes UB4 0RY</p><div class="card-l"><a href="tel:02085611625">020 8561 1625</a><a href="mailto:Hayeshealthfoods@gmail.com">Hayeshealthfoods@gmail.com</a></div><a class="btn btn-solid" href="#contact">Ask about a product</a></div>
+</figure>
+</div>
+<div class="marquee" aria-hidden="true"><div class="row"><span>Food supplements</span><span class="dot" aria-hidden="true">✦</span><span>Sports nutrition</span><span class="dot" aria-hidden="true">✦</span><span>Hard-to-find products</span><span class="dot" aria-hidden="true">✦</span><span>Friendly advice</span><span class="dot" aria-hidden="true">✦</span><span>Food supplements</span><span class="dot" aria-hidden="true">✦</span><span>Sports nutrition</span><span class="dot" aria-hidden="true">✦</span><span>Hard-to-find products</span><span class="dot" aria-hidden="true">✦</span><span>Friendly advice</span><span class="dot" aria-hidden="true">✦</span></div></div>
+<section class="services" aria-labelledby="what"><div class="wrap"><h2 id="what" data-split>What we do</h2><ul><li data-item><h3>Food supplements</h3><p>Vitamins, minerals and specialist supplements.</p></li><li data-item><h3>Sports nutrition</h3><p>Proteins, pre-workouts and bodybuilding products.</p></li><li data-item><h3>Hard-to-find products</h3><p>Unique lines you will not see in the big chains.</p></li><li data-item><h3>Friendly advice</h3><p>Family-run, so you talk to people who know the shelves.</p></li></ul></div></section>
+
+
+<section class="contact" id="contact" aria-labelledby="ct"><div class="wrap grid">
+<div><h2 id="ct" data-split>Ask about a product</h2><p class="lead" data-fade>Send a message and we will get back to you as soon as we can.</p><div class="lines" data-fade><a href="tel:02085611625">020 8561 1625</a><a href="mailto:Hayeshealthfoods@gmail.com">Hayeshealthfoods@gmail.com</a></div><p class="place" data-fade>594 Uxbridge Road, Hayes UB4 0RY</p></div>
+<form action="mailto:Hayeshealthfoods@gmail.com" method="post" enctype="text/plain" data-fade>
+<label>Your name<input name="name" autocomplete="name" required></label>
+<label>Phone or email<input name="contact" autocomplete="email" required></label>
+<label>How can we help?<textarea name="message"></textarea></label>
+<button class="btn btn-solid" type="submit">Send message</button>
+</form>
+</div></section>
+</main>
+<footer><div class="wrap"><span>© 2026 Hayes Health Foods</span><span>Concept by <a href="https://enesi.space">Jedidiah Onotu</a></span></div></footer>
+<script src="/demo/_shared/motion.js"></script>
+<script src="/demo/_shared/site.js"></script>
+</body></html>
